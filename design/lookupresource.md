@@ -1,51 +1,39 @@
 # Alpheios Data Services
 
-Basic use case:
+## General Use Case
 
-Given:
-a _target_  we need to find a corresponding resource for (e.g. a word or a grammatical feature)
-a _context_ for the target (e.g. the language, the words before and after, the url of the page, page metadata)
-_resources_ Grammars, Lexicons, Annotations (various kinds)
-_user preferences_  
-_site preferences_
+Given a _target_ and a _context_  we need to find a corresponding _resource_. 
 
-supply _target_ and _context_
-filter resources by _preferences_
-lookup in resource index
-use index data
-index data may be the final result or may be a reference to another resource
+_Resources_ may be filtered through _user preferences_ and and _site preferences_.
+
+Resource-specific _rules_ may be applied to the _target_ and _context_ to retrieve the correct _resource_.
+
+Resource retrieval should be cacheable for offline use.
+
+Resource index files vary in size and complexity.
+
+## Participants
+
+_targets_: word, grammatical feature
+
+_context_: the language, the words before and after, the url of the page, page metadata
+
+_resources_: grammars, lexicons, annotations (treebanks, translation alignments, commentary, etc.)
+
+_user preferences_: preferred lexicon, annotation restrictions, etc.  
+
+_site preferences_: site-specific resources (e.g. a specific lexicon to be used for a specific page or text)
+
+_rules_: resource-specific business logic. (e.g. algorithms for finding the correction location in a resource for a given target and context)
+
+
+## Current Implementations
 
 ![Use Case](uc_lookupresource.png)
 
-# Lexicon
+![Lexicon Short Definitions](lexicon_shortdef.png)
 
-@startuml
-"app client" -> "lexicon client": get short definition
-"lexicon client" -> "data store (GitHub)" : get index file
-"data store (GitHub)" -> "lexicon client" : index file (CSV)
-"lexicon client" -> "memory": index file (JSON)
-"lexicon client" -> "app client": definition
-@enduml
+![Lexicon Full Definitions](lexicon_shortdef.png)
 
-@startuml
-"app client" -> "lexicon client": get full definition
-"lexicon client" -> "data store" : get index file
-"data store" -> "lexicon client" : index file (CSV)
-"lexicon client" -> "memory": index file (JSON)
-"lexicon client" -> "lexicon service": get definition
-"lexicon service" -> "lexicon client": definition
-"lexicon client" -> "app client": definition
-@enduml
+![Grammar Index](grammar_index.png)
 
-# Grammar
-
-@startuml
-"app client" -> "res client": get resource url
-"res client" -> "data store (alpheios.net)": get index file
-"data store (alpheios.net)" -> "res client" : index file (CSV)
-"res client" - "memory": index file (JSON)
-"res client" -> "app client": resource url
-"app client" -> "resource url": GET
-@enduml
-
-# Treebank
