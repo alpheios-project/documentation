@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor query
+actor memory
+actor remote
+actor userprefs
+actor siteprefs
+actor adapter
+rectangle "lookup resource"  {
+  query -- (lookup resource)
+  adapter -- (find resource)
+  (lookup resource) -> (filter by prefs): include
+  (lookup resource) -> (apply context): include
+  (lookup resource) .> (find resource): include
+  (find resource) .> (get index) : include
+  (find resource) .> (cache index) : include
+  (cache index) -- memory
+  (get index) -- memory
+  (get index) -- remote
+  (filter by prefs) -- userprefs
+  (filter by prefs) -- siteprefs
+
+}
+@enduml
