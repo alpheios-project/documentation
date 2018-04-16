@@ -45,3 +45,6 @@ _rules_: resource-specific business logic. (e.g. algorithms for finding the corr
 
 ![Grammar Index](grammar_index.png)
 
+## Index File Sizes
+
+Current largest is approx 7MB, average size is smaller, but multiple per language and resource type
