@@ -1,0 +1,7 @@
+@startuml
+"app client" -> "lexicon client": get short definition
+"lexicon client" -> "data store (GitHub)" : get index file
+"data store (GitHub)" -> "lexicon client" : index file (CSV)
+"lexicon client" -> "memory": index file (JSON)
+"lexicon client" -> "app client": definition
+@enduml

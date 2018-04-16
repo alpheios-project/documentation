@@ -1,0 +1,8 @@
+@startuml
+"app client" -> "res client": get resource url
+"res client" -> "data store (alpheios.net)": get index file
+"data store (alpheios.net)" -> "res client" : index file (CSV)
+"res client" - "memory": index file (JSON)
+"res client" -> "app client": resource url
+"app client" -> "resource url": GET
+@enduml
