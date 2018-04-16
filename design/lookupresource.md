@@ -31,9 +31,12 @@ _rules_: resource-specific business logic. (e.g. algorithms for finding the corr
 
 ![Use Case](uc_lookupresource.png)
 
+*Lexicon Short Definition Lookup*
 ![Lexicon Short Definitions](lexicon_shortdef.png)
 
+*Lexicon Full Definition Lookup*
 ![Lexicon Full Definitions](lexicon_shortdef.png)
 
+*Grammar Index Lookup*
 ![Grammar Index](grammar_index.png)
 
