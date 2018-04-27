@@ -6,7 +6,7 @@
 
 U1. As a user I want to save a word to my list of words so that I can study it.
 
-U2. An a user I want to know how often a word appears in the literature across various facets (genre, author, time period, etc.) so that I can understand its relevance to my studies.
+U2. As a user I want to know how often a word appears in the literature across various facets (genre, author, time period, etc.) so that I can understand its relevance to my studies.
 
 U3. As a user I want to know how often a word appears in a given form in the literature across various facets (genre, author, time period, etc.) so that I can understand its relevance to my studies.
 
