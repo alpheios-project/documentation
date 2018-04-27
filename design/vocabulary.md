@@ -34,7 +34,7 @@ A6. As an application I want to retrieve data about occurrences of a user's inte
 
 A7. As an application I want to be able to query statistical information about how often a word appears in the literature across various facets (genre, author, time period, etc.) so that I can use it to inform what features I offer for the word.
 
-
+A8. As a application I want to be able to retrieve data about a word from external linked data sources so that I can present these sources to the user.
 
 ## Data we might want to store with a word
 
