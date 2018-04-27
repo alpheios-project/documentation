@@ -44,7 +44,14 @@ A10. As an application I want to be able to create a target vocabulary proficien
 
 A11. As a application I want to be able to retrieve data about a word from external linked data sources so that I can present these sources to the user.
 
+## Architectural Perspective
 
+I1. Vocabulary functonality should be available via a API
+I2. It must be possible to aggregate user vocabulary data across multiple applications
+I3. It must be possble to distribute all or part of user vocabulary data to individual applications and devices.
+I4. User identification and authentication be decoupled from the vocabulary functionality
+I5. Multiple applications must be able to store and retrieve data upon behalf of the same single user
+ 
 ## Data we might want to store with a word
 
 * locations of user's encounters with the word
