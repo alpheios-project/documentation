@@ -20,7 +20,9 @@
 
 * When ready to integrate a bug fix or new feature, issue a Pull Request and request a review from another developer
 
-* Production and development builds are separate build tasks. Development builds produce sourcemaps, Production builds produce minified code without source maps. Both development and production build output should be committed to GitHub. During development it is not necessary to do production builds but final builds before release should include both development and production output.
+* Production and development builds are separate build tasks. Development builds produce unminified code with sourcemaps, Production builds produce minified code without source maps and output files using a .min.js file extension. Both development and production build output should be committed to GitHub. During development it is not necessary to do production builds but final builds before release should include both development and production output.  
+
+* Downstream libraries should use aliases in their Webpack config files to include the right library version for the environment. E.g. a production build config will alias a package name to reference its minified file and a development config will alias it to reference the unminified file.
 
 * During development it is sometimes necessary to use local or branched dependencies in the package.json files. These changes are fine to commit to branches, but need to be reverted before issuing a Pull Request. (Eventually we will use npm releases and versioning to manage dependenices).
 
