@@ -61,6 +61,8 @@ I5. User identification and authentication be decoupled from the vocabulary func
 
 I6. Multiple applications must be able to store and retrieve data upon behalf of the same single user
 
+I7. We need a scalable workflow for managing corpus-level vocabulary lists.
+
  
 ## Data we might want to store with a word
 
