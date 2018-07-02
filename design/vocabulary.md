@@ -64,7 +64,7 @@ I6. Multiple applications must be able to store and retrieve data upon behalf of
 I7. We need a scalable workflow for managing corpus-level vocabulary lists.
 
  
-## Data we might want to store with a word
+## Data we might want to attach to a word
 
 * language 
 * locations of user's encounters with the word
@@ -73,4 +73,57 @@ I7. We need a scalable workflow for managing corpus-level vocabulary lists.
 * morphological analyses and inflected forms
 * definitions
 * glosses
-
+* orthographic variants
+    * with an indication of their pattern of distribution
+* pronunciation in Internation Phonetic Alphabet
+    * chief variants and their distribution
+    * including accent and syllable length
+    * audio recording- male and female voice
+        * alone and in sentences
+    * rhyming words- by work- accumulation by author, period etc
+        * use of partial rhymes
+* earliest attested appearance
+* frequency in all surviving works , including inscriptions, pots etc
+    * by author, by genre, by year
+* frequency of collocation words
+    * by author, by genre, by year
+* frequency of specific morphological forms
+    * by work, author, genre, year, register etc
+* frequency of specific syntactic roles
+    * by work, author, genre, year, register etc
+* position in works and sentences
+    * relative and absolute 
+* position in various wordnets
+    * synset number
+    * synonyms
+    * antonyms
+    * homonyms
+    * hypernyms- and ancestors
+    * hyponyms-  and children
+* explanations and descriptions in the same language
+    * including distinctions of alternative uses/meanings
+    * examples of use appearing in dictionaries and texts
+        * authentic/toy
+* explanations and synonyms in various languages
+    * frequency in translation of specific works, authors etc
+    * entries in all available dictionaries
+    * meaning groupings found in various dictionaries
+* memorability
+    * to specific kinds of learners
+    * eg concreteness (nouns vs verbs), memorable sound patterns (strong contrasts
+* sentimental weight
+    * to specific kinds of learners
+* evoked associations
+    * other words
+    * images
+    * sounds  (klang)
+* frequency of use by specific kinds of speakers - in drama, narratives ...
+    * male female
+    * age
+    * role/ social position- clown, hero etc
+* frequency of use in specific types of speech and for specific purposes
+    * registers- formal, informal, ethnic,  etc
+    * injunctions, imprecations, appeals, mockery, elegies, exhortations, etc
+* etymology and cognates-
+    * temporal and spatial dynamic spread
+    * derived words in all modern languages
