@@ -32,6 +32,12 @@
         1. Local
 
     1. Non-Alpheios compliant Service
+    
+1. Add morphology client adapter to morph-client
+
+    1. create an `ImportData` adapter for the LanguageModel in the `tufts/engine` folder
+    
+    1. add the language code to adapter mapping to the `config.json`
 
 1. Add Language model to data-models
 
