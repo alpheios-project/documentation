@@ -34,3 +34,18 @@
     1. Non-Alpheios compliant Service
 
 1. Add Language model to data-models
+
+    1. Add language symbol and iso codes to the Constants class:
+    ```
+    export const LANG_<LanguageName> = Symbol(`<language name>`)
+    export const STR_LANG_CODE_<ISO_CODE> = '<iso code>'
+    ```
+    
+    1. Create a new derivation of the `LanguageModel class, named `<LanguageName>LanguageModel` 
+    
+    1. Add the new mappings from language code to class to `LanguageModelFactory#MODELS`
+    
+    
+    
+    1. Implement a unit test for the new LanguageModel class
+    
