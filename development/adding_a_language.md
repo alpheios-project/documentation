@@ -50,8 +50,8 @@
     1. Create a new derivation of the `LanguageModel class, named `<LanguageName>LanguageModel` 
     
     1. Add the new mappings from language code to class to `LanguageModelFactory#MODELS`
-    
-    
-    
+       
     1. Implement a unit test for the new LanguageModel class
+    
+    1. Export the new LanguagModel class in the `driver.js` for the package
     
