@@ -38,6 +38,8 @@
     1. create an `ImportData` adapter for the LanguageModel in the `tufts/engine` folder
     
     1. add the language code to adapter mapping to the `config.json`
+    
+    1. import the new `ImportData` adapter in the `AlpheiosTuftsAdapter` class and add it to the `engineMap` property
 
 1. Add Language model to data-models
 
