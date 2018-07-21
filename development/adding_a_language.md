@@ -56,4 +56,6 @@
     1. Implement a unit test for the new LanguageModel class
     
     1. Export the new LanguagModel class in the `driver.js` for the package
+
+1. Add the language to the `preferredLanguage` and `lookupLanguage` setting defaults in the components library
     
