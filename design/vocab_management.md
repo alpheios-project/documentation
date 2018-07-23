@@ -3,9 +3,13 @@ Problem statement:
 We have the following User Stories in our requirements:
 
 U4. As a user I want to see the contexts in which a word occurs in the literature so that I can understand it better.
+
 U5. As a user I want to be able to generate a target vocabulary list for any text I want to read so that I can see what I need to learn.
+
 U6. As a user I want to be able to compare my word list against a proficiency target so that I can assess my progress.
+
 U7. As a user I want to know how often a word appears in the literature across various facets (genre, author, time period, etc.) so that I can understaned its relevance to my studies.
+
 U8. As a user I want to know how often a word appears in a given form in the literature across various facets (genre, author, time period, etc.) so that I can understand its relevance to my studies.
 
 
