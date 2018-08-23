@@ -30,9 +30,11 @@ You could simply upload a webextension using **about:debugging** page of Firefox
 ![Screenshot](../images/firefox-config.png)
 
 
+
 3. You should create one archive zip file with an extension `*.xpi` with all webextension files (I have done it with the help of 7zip):
 
 ![Screenshot](../images/firefox-xpi.png)
+
 
 
 4. You should simply drag it to Firefox:
@@ -40,15 +42,18 @@ You could simply upload a webextension using **about:debugging** page of Firefox
 ![Screenshot](../images/firefox-drag-1.png)
 
 
+
 5. Click **Add** in a popup window:
 
 ![Screenshot](../images/firefox-drag-2.png)
+
 
 
 6. And Finally it will appear in a browser
 
 ![Screenshot](../images/firefox-final-1.png)
 
+
 and on a page **about:addons** as any other signed on extension:
 
-![Screenshot](../images/firefox-final-1.png)
+![Screenshot](../images/firefox-final-2.PNG)
