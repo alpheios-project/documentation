@@ -51,4 +51,4 @@ You could simply upload a webextension using **about:debugging** page of Firefox
 
 and on a page **about:addons** as any other signed on extension:
 
-![Screenshot](../images/firefox-final-1.PNG)
+![Screenshot](../images/firefox-final-1.png)
