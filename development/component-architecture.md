@@ -53,6 +53,10 @@ fully initialized, but it might also discard some of its data in order to reduce
 decides to discard some of its data it is a responsibility of a component to restore this data when it will be switched 
 back to an **activated** state.
 
+#### Component Lifecycle Diagram
+
+![Component Lifecycle Diagram](component-architecture/business-component-lifecycle.svg)
+
 ### Lifecycle State Indicators
 
 Each business component should implement the following properties that will reflect a state of it:
