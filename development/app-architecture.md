@@ -29,6 +29,29 @@ Business components are specialized: each single business component should serve
 An example of a business component could be a class that builds an inflection table structure out of inflection data.
 This data can be used by a presentational Vue component to present an inflection table to the user.
 
+### Business Components Architecture
+
+Here is a current architecture of business components. Components with browser-specific code are highlighted
+with light blue.
+![Component Lifecycle Diagram](app-architecture/app-architecture-current.svg)
+
+It would be beneficial to make the following changes into an architecture:
+1. Reduce the number of components with browser-specific code.
+2. Simplify interdependencies between components.
+
+The following changes may help to achieve this goal:
+* Split ContentProcess component between Content and UIController components. Browser specific part of its
+functionality (an interaction with a background script or app) could go into a Content component, and 
+page specific functionality (listening of user actions such as clicks) could be inserted into a
+UIController. It is more a UIController responsibility to react to user actions.
+* Eliminate ownership of stateless resources (i.e. morphologycal analyzer and other language resource 
+adapters) with the relationship using a Singleton pattern where a UI controller would call a static
+function on an adapter class and that function will return a reference to a single instance of a controller.
+
+An updated architecture is shown below, browser-specific classes are shown in blue.
+
+![Component Lifecycle Diagram](app-architecture/app-architecture-future.svg)
+
 ### Business Component Lifecycle Phases
 
 A business component goes through different lifecycle phases during its existence.
@@ -55,7 +78,7 @@ back to an **activated** state.
 
 #### Component Lifecycle Diagram
 
-![Component Lifecycle Diagram](component-architecture/business-component-lifecycle.svg)
+![Component Lifecycle Diagram](app-architecture/business-component-lifecycle.svg)
 
 ### Lifecycle State Indicators
 
@@ -92,3 +115,4 @@ to minimize its footprint. In this state component is fully or partially initial
 same data can be missing as it has been discarded in order to reduce a component memory consumption. Deactivated
 component is ignoring any requests or function calls that are sent to it. Component should either ignore them or 
 return an error message to the caller.
+

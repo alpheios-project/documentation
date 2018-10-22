@@ -1,0 +1,74 @@
+@startuml
+class Content #lightblue {
+    Handling of background script/app requests
+    Notification of background of state changes
+    ..
+    browser dependent
+}
+
+class MessagingService #lightblue {
+    Sending and receiving messages
+    to/from background
+    ..
+    browser dependent
+}
+
+class TabScript {
+    State of a current tab (page)
+}
+
+class ContentOptions {
+    Options of working with page content
+}
+
+class ResourceOptions {
+    Options of language resources
+}
+
+class UIOptions {
+    Options of a UI
+}
+
+class MorphAnalyzerAdapter {
+  Stateless. Not connected directly.
+  Accessed via a Singleton pattern
+}
+
+class LemmaTranslations {
+    Stateless. Not connected directly.
+    Accessed via a Singleton pattern
+}
+
+class UIController {
+    Coordinates all interactions with a user
+    ==
+    User communication with page content
+    ..
+    browser independent
+}
+
+object "Panel Vue Instance" as PanelVI {
+    Holds a panel component
+    and a tree of subcomponents
+}
+object "Popup Vue Instance" as PopupVI {
+    Holds a popup component
+    and a tree of subcomponents
+}
+
+class L10n {
+    Stateless. Not connected directly.
+    Accessed via a Singleton pattern
+}
+
+Content *-- UIController
+Content *-- MessagingService
+
+
+UIController *-- PanelVI
+UIController *-- PopupVI
+UIController *-- TabScript
+UIController *-- ContentOptions
+UIController *-- ResourceOptions
+UIController *-- UIOptions
+@enduml
