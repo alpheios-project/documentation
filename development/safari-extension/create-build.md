@@ -22,4 +22,9 @@ Each of them has its own `Info.plist` file with the following fields ([apple doc
 Field name (XCode) | Field Key | Description
 ------------ | ------------- | -----------------
 InfoDictionary version | CFBundleInfoDictionaryVersion | (Recommended) Version information for the Info.plist format. Identifies the current version of the property list structure. This key exists to support future versioning of the information property list file format. Xcode generates this key automatically when you build a bundle and you should not change it manually. The value for this key is currently 6.0.
-Bundle name | SFBundleName | Specifies the short name of the bundle, which may be displayed to users in situations such as the absence of a value for CFBundleDisplayName. This name should be less than 16 characters long.
+Bundle name | CFBundleName | Specifies the short name of the bundle, which may be displayed to users in situations such as the absence of a value for CFBundleDisplayName. This name should be less than 16 characters long.
+Bundle Display name | CFBundleDisplayName | Specifies the display name of the bundle, visible to users and used by Siri
+Executable file | CFBundleExecutable | Name of the bundle’s executable file.
+Bundle identifier | CFBundleIdentifier | An identifier string that specifies the app type of the bundle. The string should be in reverse DNS format using only the Roman alphabet in upper and lower case (A–Z, a–z), the dot (“.”), and the hyphen (“-”).
+Bundle version | CFBundleVersion | The build-version-number string for the bundle.
+Bundle versions string, short | CFBundleShortVersionString | The release-version-number string for the bundle.
