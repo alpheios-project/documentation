@@ -21,10 +21,12 @@ Each of them has its own `Info.plist` file with the following fields ([apple doc
 
 Field name (XCode) | Field Key | Description
 ------------ | ------------- | -----------------
-InfoDictionary version | CFBundleInfoDictionaryVersion | (Recommended) Version information for the Info.plist format. Identifies the current version of the property list structure. This key exists to support future versioning of the information property list file format. Xcode generates this key automatically when you build a bundle and you should not change it manually. The value for this key is currently 6.0.
 Bundle name | CFBundleName | Specifies the short name of the bundle, which may be displayed to users in situations such as the absence of a value for CFBundleDisplayName. This name should be less than 16 characters long.
 Bundle Display name | CFBundleDisplayName | Specifies the display name of the bundle, visible to users and used by Siri
 Executable file | CFBundleExecutable | Name of the bundle’s executable file.
 Bundle identifier | CFBundleIdentifier | An identifier string that specifies the app type of the bundle. The string should be in reverse DNS format using only the Roman alphabet in upper and lower case (A–Z, a–z), the dot (“.”), and the hyphen (“-”).
 Bundle version | CFBundleVersion | The build-version-number string for the bundle.
 Bundle versions string, short | CFBundleShortVersionString | The release-version-number string for the bundle.
+Bundle OS Type Code | CFBundlePackageType | The four-letter code identifying the bundle type. The type code for apps is APPL; for frameworks, it is FMWK; for loadable bundles, it is BNDL.
+Copyright (human-readable) | NSHumanReadableCopyright | This key contains a string with the copyright notice for the bundle; for example, © 2016, My Company. You can load this string and display it in an About dialog box. The system uses this string in the app’s Info window in Finder.
+NSHumanReadableDescription | NSHumanReadableDescription | When the app extension is installed, the string value of this key appears in Safari Extensions Preferences.
