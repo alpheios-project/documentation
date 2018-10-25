@@ -19,7 +19,7 @@ Current versions of all used libraries you could see in `package.json`.
 
 ## 2. Change version and rebuild MacOS application
 
-###Info.plist
+### Info.plist
 
 Alpheios Safari App Extension consists of Application and Safari Extension. 
 Each of them has its own `Info.plist` file with the following fields that can be used for identification process ([apple doc](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/)):
@@ -36,7 +36,7 @@ Bundle OS Type Code | CFBundlePackageType | The four-letter code identifying the
 Copyright (human-readable) | NSHumanReadableCopyright | This key contains a string with the copyright notice for the bundle; for example, © 2016, My Company. You can load this string and display it in an About dialog box. The system uses this string in the app’s Info window in Finder.
 NSHumanReadableDescription | NSHumanReadableDescription | When the app extension is installed, the string value of this key appears in Safari Extensions Preferences.
 
-###Xcode parameters
+### Xcode parameters
 
 Also Project and each target have their own scope of properties that are used in creation build, identifying and signing processes.
 
