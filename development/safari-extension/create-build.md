@@ -64,18 +64,23 @@ For make an archive of the application:
 
 1. Click **Product -> Archive**
    In the left Panel you will see all saved builds for macOS Apps, when you choose the one of them at the right panel you will be able to see the Details:
+
    ![Screenshot](../../images/safari-create-build1.png)
 
 2. Click **Distribute App**, select **Development** and click **Next**
+
    ![Screenshot](../../images/safari-create-build2.png)
 
 3. Leave **Automatically manage signing** checked and click **Next**
+
    ![Screenshot](../../images/safari-create-build3.png)
 
 4. You will be shown the screen with final properties, click **Export**
+
    ![Screenshot](../../images/safari-create-build4.png)
 
 5. Define Archive Folder name and click **Export**
+
    ![Screenshot](../../images/safari-create-build5.png)
 
 Finally you should have the ready folder in SafariBuild with AlpheiosSafariApp (names from my example).
@@ -85,15 +90,19 @@ Finally you should have the ready folder in SafariBuild with AlpheiosSafariApp (
 For creating .dmg from archive application folder:
 
 1. Open Applications -> Utilities -> Disk Utility
+
    ![Screenshot](../../images/safari-create-build6.png)
 
 2. Click File -> New Image -> Image from Folder
+
    ![Screenshot](../../images/safari-create-build7.png)
 
 3. Choose created archive application folder and click **Chose**
+
    ![Screenshot](../../images/safari-create-build8.png)
 
 4. Click **Save** (in this dialog window you could define dmg file name)
+
    ![Screenshot](../../images/safari-create-build9.png)
 
 DMG file is ready.
