@@ -16,10 +16,8 @@ Current versions of all used libraries you could see in `package.json`.
 
 ## 2. Change version and rebuild MacOS application
 
-### Change version
-
 Alpheios Safari App Extension consists of Application and Safari Extension. 
-Each of them has its own `Info.plst` file with the following fields ([apple doc](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/)):
+Each of them has its own `Info.plist` file with the following fields ([apple doc](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/)):
 
 Field name (XCode) | Field Key | Description
 ------------ | ------------- | -----------------
