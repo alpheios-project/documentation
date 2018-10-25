@@ -10,8 +10,11 @@ The update and build process for Safari App Extension contains the following sta
 ## 1. Update content part (js, css files)
 
 Js/Css files are made using a standard npm build process with using `config-content-safari.mjs` file and `alpheios-node-build` tool.
+
 The command is `npm run build-safari` (details of steps and parameters you could see in the `package.json`, `scripts` section).
+
 Entry file for starting a build process you could see in `config-content-safari.mjs` (webpack -> common -> entry).
+
 Current versions of all used libraries you could see in `package.json`.
 
 ## 2. Change version and rebuild MacOS application
