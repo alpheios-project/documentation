@@ -757,3 +757,63 @@ Sample data:
 ῥῖψις|throwing, hurling
 ...
 ```
+
+### Grammar
+
+Grammars can be provided in HTML. The minimum requirement is that an index be provided which maps values of morphological features to locations in the grammar.
+
+Example index:
+
+```
+alph-case,part2.htm#alph-case
+alph-case-ablative,part5.htm#alph-case-ablative
+alph-case-accusative,part5.htm#alph-case-accusative
+alph-case-dative,part5.htm#alph-case-dative
+alph-case-genitive,part5.htm#alph-case-genitive
+alph-case-locative,part5.htm#alph-case-locative
+alph-case-nominative,part5.htm#alph-case-nominative
+alph-case-vocative,part5.htm#alph-case-vocative
+alph-comparison,part2.htm#alph-comp
+alph-conjugation,part2.htm#alph-conj
+alph-conjugation-1st,part2.htm#alph-conj-1st
+alph-conjugation-2nd,part2.htm#alph-conj-2nd
+alph-conjugation-3rd,part2.htm#alph-conj-3rd
+alph-conjugation-4th,part2.htm#alph-conj-4th
+alph-conjugation-irregular,part2.htm#alph-conj-irregular
+alph-declension,part2.htm#alph-decl
+alph-declension-1st,part2.htm#alph-decl-1st
+alph-declension-2nd,part2.htm#alph-decl-2nd
+alph-declension-3rd,part2.htm#alph-decl-3rd
+alph-declension-4th,part2.htm#alph-decl-4th
+alph-declension-5th,part2.htm#alph-decl-5th
+alph-gender,part2.htm#alph-gender
+alph-general-index,index.htm#alph-general-index
+alph-mood,part5.htm#alph-mood
+alph-mood-imperative,part5.htm#alph-mood-imperative
+alph-mood-indicative,part5.htm#alph-mood-indicative
+alph-mood-infinitive,part5.htm#alph-mood-infinitive
+alph-mood-participle,part5.htm#alph-mood-participle
+alph-mood-subjunctive,part5.htm#alph-mood-subjunctive
+alph-number,part2.htm#alph-num
+alph-part of speech,part2.htm#alph-pofs
+alph-part of speech-adjective,part2.htm#alph-pofs-adjective
+alph-part of speech-adverb,part3.htm#alph-pofs-adverb
+alph-part of speech-conjunction,part3.htm#alph-pofs-conjunction
+alph-part of speech-interjection,part3.htm#alph-pofs-interjection
+alph-part of speech-noun,part2.htm#alph-pofs-noun
+alph-part of speech-numeral,part2.htm#alph-pofs-numeral
+alph-part of speech-preposition,part3.htm#alph-pofs-preposition
+alph-part of speech-pronoun,part2.htm#alph-pofs-pronoun
+alph-part of speech-supine,part5.htm#alph-pofs-supine
+alph-part of speech-verb,part2.htm#alph-pofs-verb
+alph-part of speech-verb participle,part5.htm#alph-pofs-verb_participle
+alph-table-of-contents,toc.htm#alph-table-of-contents
+alph-tense,part5.htm#alph-tense
+alph-tense-present,part5.htm#alph-tense
+alph-tense-imperfect,part5.htm#alph-tense
+alph-tense-future,part5.htm#alph-tense
+alph-tense-future perfect,part5.htm#alph-tense
+alph-tense-pluperfect,part5.htm#alph-tense
+alph-tense-perfect,part5.htm#alph-tense
+alph-voice,part5.htm#alph-voice
+```
