@@ -14,6 +14,8 @@
 
 ### Advanced
 
+*Inflection tables*: Description pending
+
 *Treebank data*: treebank data enables display of tree diagrams and use of treebank data to disambiguate parser results. It must meet the following prerequisites:
 
 * Has been aligned to a text at the word and sentence level
