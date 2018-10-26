@@ -26,6 +26,13 @@
 
 *Translation Glosses*: Description pending
 
+### Flow
+
+The following is a simplified view of how Alpheios uses the various services and resources to build a view of a word.
+
+![Alpheios Resource Flow](alpheiosflow.png)
+
+
 ## Resource/Service Details
 
 ### Morphology Service Provided Engines
