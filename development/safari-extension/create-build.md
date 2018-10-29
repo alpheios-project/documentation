@@ -19,6 +19,12 @@ Current versions of all used libraries you could see in `package.json`.
 
 ## 2. Change version and rebuild MacOS application
 
+It is recommended to keep the version and build numbers consistent across the App and the App Extension.
+
+Increment the build number (CFBundleVersion) with each build for testing.
+
+Increment the version number (CFBundleShortVersionString) with each release.
+
 ### Info.plist
 
 Alpheios Safari App Extension consists of Application and Safari Extension. 
@@ -58,7 +64,7 @@ Versioning | Current Project Version | This settings defines the current version
 1) **Product -> Clean Build Folder**
 2) **Product -> Build**
 
-## 3. Archive MacOS application
+## 3. Archive MacOS application - Development Build
 
 For make an archive of the application:
 
@@ -71,9 +77,9 @@ For make an archive of the application:
 
    ![Screenshot](../../images/safari-create-build2.png)
 
-3. Leave **Automatically manage signing** checked and click **Next**
+3. Make sure the Team on the signing page is The Alpheios Project, Ltd. and choose your Mac Developer certificate, then the select the **Alpheios App Developer Profile** profile for the Alpheios App and the **Alpheios Safari Developer Profile** for the Alpheios Safari App Extension and click **Next**
 
-   ![Screenshot](../../images/safari-create-build3.png)
+   ![Screenshot](../../images/safari-create-build3b.png)
 
 4. You will be shown the screen with final properties, click **Export**
 
