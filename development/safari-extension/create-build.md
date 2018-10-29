@@ -79,7 +79,7 @@ For make an archive of the application:
 
 3. Make sure the Team on the signing page is The Alpheios Project, Ltd. and choose your Mac Developer certificate, then the select the **Alpheios App Developer Profile** profile for the Alpheios App and the **Alpheios Safari Developer Profile** for the Alpheios Safari App Extension and click **Next**
 
-   ![Screenshot](../../images/safari-create-build3b.png)
+   ![Screenshot](../../images/safari-create-build-3b.png)
 
 4. You will be shown the screen with final properties, click **Export**
 
