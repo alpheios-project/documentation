@@ -1,9 +1,11 @@
 
 # How To Create a QA Build 
 
-**1. Pull latest code from master**
+## 1. Pull latest code from master
 
-**2. Increment build number**
+`git checkout master && git pull`
+ 
+## 2. Increment build number
 
 Keep the version and build numbers consistent across the App and the App Extension. Eventually we would like to automate this but for now we will do it manually.
 
@@ -19,17 +21,17 @@ Increment the build number (`CFBundleVersion`) for both the App and the Extensio
 
 Make sure the release version number (`CFBundleShortVersionString`) for both the App and the Extension matches that of the package.json version.
 
-**3. Build javascript code**
+## 3. Build javascript code
 
  `npm run build-safari`
 
 (Js/Css files are made using a standard npm build process with using `config-content-safari.mjs` file and `alpheios-node-build` tool.)
 
-**4. Commit to GitHub**
+## 4. Commit to GitHub
 
 Commit the built code to GitHub
 
-**5.Build and Archive MacOS application**
+## 5.Build and Archive MacOS application
 
 In Xcode:
 
@@ -79,4 +81,4 @@ For creating .dmg from archive application folder:
 
    ![Screenshot](../../images/safari-create-build9.png)
 
-5. Copy the dmg file to the Alpheios-Safari Dropbox folder
+## 7. Copy the dmg file to the Alpheios-Safari Dropbox folder
