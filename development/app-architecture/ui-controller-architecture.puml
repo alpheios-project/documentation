@@ -1,0 +1,88 @@
+@startuml
+object UIController {
+    A container class
+    Contains:
+    Root Vue component
+    Business Methods
+    Event Listeners
+
+
+}
+
+object "Vuex Store" as VuexStore #seagreen {
+    Stores data for Vue components
+    Contains data mutations and actions methods
+}
+
+component VueRootComponent #lightseagreen {
+}
+
+component VueComponentA #lightseagreen{
+}
+
+component VueComponentB #lightseagreen {
+}
+
+component VueComponentC #lightseagreen {
+}
+
+component VueComponentD #lightseagreen {
+}
+
+component VueComponentE #lightseagreen {
+}
+
+component VueComponentF #lightseagreen {
+}
+
+node "Business Methods" {
+    component BusinessMethodA #deepskyblue {
+    }
+
+    component BusinessMethodB #deepskyblue {
+    }
+
+    component BusinessMethodC #deepskyblue {
+    }
+}
+
+node "Event Listeners" {
+    component EventListenerA #aquamarine {
+    }
+
+    component EventListenerB #aquamarine {
+    }
+
+    component EventListenerC #aquamarine {
+    }
+}
+
+
+VuexStore *-- UIController
+
+UIController *-- BusinessMethodA
+UIController *-- BusinessMethodB
+UIController *-- BusinessMethodC
+
+UIController *-- EventListenerA
+UIController *-- EventListenerB
+UIController *-- EventListenerC
+
+UIController *-- VueRootComponent
+VueRootComponent *-- VueComponentA
+VueRootComponent *-- VueComponentB
+
+VueComponentA *-- VueComponentC
+VueComponentA *-- VueComponentD
+VueComponentB *-- VueComponentE
+VueComponentB *-- VueComponentF
+
+VueRootComponent o-- VuexStore
+VueComponentA o-- VuexStore
+VueComponentB o-- VuexStore
+VueComponentC o-- VuexStore
+VueComponentD o-- VuexStore
+VueComponentE o-- VuexStore
+VueComponentF o-- VuexStore
+
+@enduml
