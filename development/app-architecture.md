@@ -116,3 +116,19 @@ same data can be missing as it has been discarded in order to reduce a component
 component is ignoring any requests or function calls that are sent to it. Component should either ignore them or 
 return an error message to the caller.
 
+## UI Controller
+
+UI Controller is responsible for managing all interactions with the user. It outputs all visual information to
+the user and listens to user inputs.
+
+UI Controller uses queries to retrieve lexical and other information from remote sources. 
+
+### Interaction with the Query
+
+Because Queries deal with remote sources, they are asynchronous by nature. To obtain some data with the help
+of the Query, UI Controller calls an asynchronous `getData()` method of the Query instance and subscribes 
+to listen to Query events. When the Query receives a next portion of data, it fires a corresponding event. 
+UI Controller receives event-related data in an event callback, processes the data received, and displays 
+this data to the user.
+
+![UI Controller and query interaction](app-architecture/query-ui-controller-interaction.svg)

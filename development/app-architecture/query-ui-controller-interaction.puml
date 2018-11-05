@@ -1,0 +1,9 @@
+@startuml
+participant UIController
+participant CompositeQuery
+
+UIController->CompositeQuery: getData() async request
+CompositeQuery->UIController: update lexeme data event
+CompositeQuery->UIController: update morphology event
+CompositeQuery->UIController: update definitions event
+@enduml
