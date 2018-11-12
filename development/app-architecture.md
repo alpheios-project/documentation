@@ -121,34 +121,36 @@ return an error message to the caller.
 UI Controller is responsible for managing all interactions with the user. It outputs all visual information to
 the user and listens to user inputs.
 
+### UI Controller Architecture
+
 UI Controller structure is modular to accommodate requirements of different applications that will use it.
-It consists of the following parts:
+All modules in a controller are pluggable. It means that UI Controller should be able to function with
+any number of modules, or, if necessary, without any (although this scenario is probably not very likely).
+Because of this, UI Controller should properly handle situations when not all modules are present.
 
-* **Vuex store**. Contains data that is required for Vue components so that they can present data for the user. 
-This element exists in all UI Controller configuration, except when there is no UI Components at all. 
-It is tightly coupled with a UI controller itself. UI Controller keeps a reference to Vuex and Vuex has 
-a reference to UI Controller. Mutations and actions
-of a Vuex store may call business logic methods of a UI Controller directly.
+UI Controller consists of the following parts:
 
-* **Vue components** display data to the user and listens to user interactions. Vue components keep a
-reference to a Vuex store, but not to the UI Controller directly. If Vue component need to notify about
-its state update, it calls mutations or actions of a store. Those, in turn, may call methods of a
-UI Controller. Individual Vue components have access to all Vuex store properties, but uses only those
-ones that are within a component's domain of responsibility.
-
-* **Business functions**. These are methods of a UI Controller that implements business logic. They exist in
+* **Business methods**. These are methods of a UI Controller that implement business logic. They exist in
 any configuration of a UI Controller. If a configuration of a UI controller does not use some methods, it
 simply does not call them.
 
-* **Event listeners**. UI Controller might subscribes to get information about events it's interested in.
+* **View Controller**. This component is responsible for displaying data to users. Currently, it uses Vue.js
+components, but it could use any other technology as well. View Controller modules (in the current architecture)
+ are:
+
+    * **State data**. Contains data that is required for Vue components so that they can present data for 
+    the user. Implemented as a Vuex store.
+    * **Vue components** (panel, popup). They display data to the user and listens to user interactions.
+
+* **Vue components** display data to the user and listens to user interactions.
+
+* **User Input Event listeners**. UI Controller might subscribes to get information about events it's interested in.
 Those could be user interactions with the page (i.e. mouse double click) that are not handled by
-Vue components. Or they can be events from queries initiated by a UI Controller (i.e. LexicalQuery
-results). Depending on configuration, UI Controller can have zero to multiple event listeners.
+Vue components. Depending on configuration, UI Controller can have zero to multiple event listeners.
 
 UI Controller follows a business component lifecycle phases.
 
-### UI Controller Architecture
-![UI Controller architecture](app-architecture/ui-controller-architecture.svg)
+![UI Controller component architecture](app-architecture/ui-controller-components.svg)
 
 ### Interaction with Queries
 
