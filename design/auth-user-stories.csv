@@ -1,6 +1,6 @@
 ID,Who,Where,I want to...,In order to...,Notes
-,User,All Alpheios Apps,create a new user account using a Social IDP,store data,
-,User,All,Alpheios Apps,create a new user account supplying a username and passord,store data
-,User,All Alpheios Apps,login to my account,access my personal data,
-,User,All,Alpheios Apps,request a password reset on my account,access my account after losing my password,
-,User,All Alpheios Apps,save a word (with context) to my wordlist,study it later,See also alpheios-project/documentation/design/vocabulary.md
+1.0,User,All Alpheios Apps,create a new user account using a Social IDP,store data,
+2.0,User,All Alpheios Apps,create a new user account supplying a username and passord,store data
+3.0,User,All Alpheios Apps,login to my account,access my personal data,
+4.0,User,All Alpheios Apps,request a password reset on my account,access my account after losing my password,
+5.0,User,All Alpheios Apps,save a word (with context) to my wordlist,study it later,See also alpheios-project/documentation/design/vocabulary.md
