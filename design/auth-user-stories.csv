@@ -18,6 +18,7 @@ ID,Who,Where,I want to...,In order to...,Notes
 17,Admin,All Alpheios Apps,push a new terms of service to users,to update the terms,
 18,Admin,All Alpheios Apps,enforce a storage limit on a user account,conserve resources,
 19,User,All Alpheios Apps,delete my account,remove my data from Alpheios,
+20,Admin,All Alpheios Apps,delete a user account,prevent misuse,
 
 
 
