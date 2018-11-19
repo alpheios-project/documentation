@@ -19,6 +19,10 @@ ID,Who,Where,I want to...,In order to...,Notes
 18,Admin,All Alpheios Apps,enforce a storage limit on a user account,conserve resources,
 19,User,All Alpheios Apps,delete my account,remove my data from Alpheios,
 20,Admin,All Alpheios Apps,delete a user account,prevent misuse,
+21,Application,All Alpheios Apps,store data by user id,respond to a user request to store data,
+22,Application,All Alpheios Apps,retrieve data by user id,respond to a user request to show their data,
+23,Application,All Alpheios Apps,remove data by user id,respond to a user request to remove their data,
+
 
 
 
