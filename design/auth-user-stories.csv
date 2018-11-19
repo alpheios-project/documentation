@@ -1,6 +1,24 @@
 ID,Who,Where,I want to...,In order to...,Notes
-1.0,User,All Alpheios Apps,create a new user account using a Social IDP,store data,
-2.0,User,All Alpheios Apps,create a new user account supplying a username and passord,store data,
-3.0,User,All Alpheios Apps,login to my account,access my personal data,
-4.0,User,All Alpheios Apps,request a password reset on my account,access my account after losing my password,
-5.0,User,All Alpheios Apps,save a word (with context) to my wordlist,study it later,See also alpheios-project/documentation/design/vocabulary.md
+1,User,All Alpheios Apps,create a new user account using a Social IDP,store data,
+2,User,All Alpheios Apps,create a new user account supplying a username and passord,store data,
+3,User,All Alpheios Apps,login to my account,access my personal data,
+4,User,All Alpheios Apps,request a password reset on my account,access my account after losing my password,
+5,User,All Alpheios Apps,manually change the password on my account,have a new password,
+6,User,All Alpheios Apps,see the latest terms of service,be informed of my rights,
+7,User,All Alpheios Apps,save a word (and context) to my word list,to study,(see also full vocab/wordlist requirements)
+8,User,All Alpheios Apps,remove a word from my word list,,
+9,User,All Alpheios Apps,see all the words on my word list,,
+10,User,All Alpheios Apps,save a comment annotation on a text,,
+11,User,All Alpheios Apps,remove a comment annotation from a text,,
+12,User,All Alpheios Apps,see all my annotations,,
+13,User,PWA,bookmark a place in a text,come back to it quickly later,
+14,User,PWA,unbookmark a place in a text,clear the clutter,
+15,User,PWA,upload a text,to read it with the Alpheios mobile reader,
+16,User,All Alpheios Apps,download the data stored for my user account,do something with it outside of Alpheios,
+17,Admin,All Alpheios Apps,push a new terms of service to users,to update the terms,
+18,Admin,All Alpheios Apps,enforce a storage limit on a user account,conserve resources,
+19,User,All Alpheios Apps,delete my account,remove my data from Alpheios,
+
+
+
+
