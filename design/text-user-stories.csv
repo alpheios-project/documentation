@@ -1,11 +1,23 @@
 ID,Who,Precondition,I want to...,In order to...,Notes
-T1,User,,Browse available texts,Find a text to read,
-T2,User,,Select a text to read,Access a text to read,
-T3,User,,Read a text,Read a text,
-T4,User,,Navigate a table of contexts for a text,Read a specific portion of a text,
-T5,User,Logged in,Bookmark my place in a text, Save a marker at a specific point in a text,see also auth user stories
-T6,User,Logged in,Pick up reading at a bookmarked place in a text, return to a specific point in a text,see also auth user stories
-T7,User,,Search for a word in a text,find all uses of a word in a text,
-T8,User,,Search for a word across multiple texts,find all uses of a word across multiple texts,
-T9,User,Logged in,Upload my own text,make a text available for use with Alpheios,see also auth user stories
+T1,User,Online or Offline,Browse available texts,Find a text to read,
+T2,User,Online or Offline,Select a text to read,Access a text to read,
+T3,User,Online or Offline,Read a text,Read a text,
+T4,User,Online or Offline,Navigate a table of contexts for a text,Read a specific portion of a text,
+T5,User,Online & Logged in,Bookmark my place in a text, Save a marker at a specific point in a text,see also auth user stories
+T6,User,Online & Logged in,Pick up reading at a bookmarked place in a text, return to a specific point in a text,see also auth user stories
+T7,User,Online or Offline,Search for a word in a text,find all uses of a word in a text,
+T8,User,Online or Offline,Search for a word across multiple texts,find all uses of a word across multiple texts,
+T9,User,Online & Logged in,Upload my own text,make a text available for use with Alpheios,see also auth user stories
+T10,User,Online,Select one or more sections of a text to read while offline,Have acess a text while offline,
+T11,User,Online,Pre-cache morphology for a text,Have immediate access to all morphology for a text while offline,
+T12,User,Online,Pre-cache short definitions for a text,Have immediate access to all short definitions for a text while offline,
+T13,User,Online,Pre-cache tree diagrams for a text,Have immediate access to tree diagrams for a text while offline,
+T14,User,Online,Pre-cache a grammar,Have immediate access to a grammar while offline,
+T15,User,Offline,Access full definitions I have previously viewed while online, access full definitions while offline,
+T16,User,Offline,Access pre-cached morphology for a word in a text,access morphology while offline,
+T17,User,Offline,Access pre-cached short definitions for a word in a text,access short definitions while offline,
+T18,User,Offline and annotated text,Access pre-cached tree diagram for a word in a text,access tree diagrams while offline,
+T19,User,Offline,Access pre-cached grammar,access grammar while offline,
+T20,User,Offline,Access pre-cached inflection-tables,access inflection tables while offline,
+
 
