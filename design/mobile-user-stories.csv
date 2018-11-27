@@ -1,0 +1,13 @@
+ID,Who,Precondition,I want to...,In order to...,Notes
+M1,User,Online,Select one or more sections of a text to read while offline,Have acess a text while offline,
+M2,User,Online,Download morphology for a text,Have immediate access to all morphology for a text while offline,
+M3,User,Online,Download short definitions for a text,Have immediate access to all short definitions for a text while offline,
+M4,User,Online,Download tree diagrams for a text,Have immediate access to tree diagrams for a text while offline,
+M5,User,Online,Download a grammar,Have immediate access to a grammar while offline,
+M6,User,Offline,Access full definitions I have previously viewed while online, access full definitions while offline,
+M7,User,Offline,Access pre-cached morphology for a word in a text,access morphology while offline,
+M8,User,Offline,Access pre-cached short definitions for a word in a text,access short definitions while offline,
+M9,User,Offline and annotated text,Access pre-cached tree diagram for a word in a text,access tree diagrams while offline,
+M10,User,Offline,Access grammar,access grammar while offline,
+M11,User,Offline,Access inflection-tables,access inflection tables while offline,
+M12,User,Offline,Search for a word within downloaded content,find occurences of a word while offline,
