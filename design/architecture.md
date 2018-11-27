@@ -21,6 +21,7 @@ Various prototypes for this are underway.  The [pwa-prototype](https://github.co
 
 ![Use Case Diagram](app-use-cases.svg)
 
+***(Open the diagram in a new tab to activate the links to the user stories)***
 
 ## Core Libraries
 
