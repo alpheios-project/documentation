@@ -5,8 +5,8 @@ A3,User,login to my account,access my personal data,
 A4,User,request a password reset on my account,access my account after losing my password,
 A5,User,manually change the password on my account,have a new password,
 A6,User,see the latest terms of service,be informed of my rights,
-A7,User,save data,save a specific piece of data,specific data types expanded upon in other stories,
-A8,User,remove data,remove a specific piece of data,specific data types expended upon in other stories,
+A7,User,save data,save a specific piece of data,specific data types expanded upon in other stories
+A8,User,remove data,remove a specific piece of data,specific data types expended upon in other stories
 A9,User,,see all  of a specific type of data in my account,see the aggregation of my data,specific data types expanded upon in other stories
 A10,User,download the data stored for my user account,do something with it outside of Alpheios,
 A11,Admin,push a new terms of service to users,to update the terms,
