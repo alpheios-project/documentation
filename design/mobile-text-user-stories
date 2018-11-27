@@ -1,0 +1,6 @@
+ID,Who,I want to...,In order to...,Notes
+T4,User,Select one or more sections of a text to read while offline,Have acess a text while offline,
+T11,User,Mobile Device,Online,Download morphology for a text,Have access to all morphology for a text while offline,
+T12,User,Mobile Device,Online,Download short definitions for a text,Have access to all short definitions for a text while offline,
+T13,User,Mobile Device,Online,Download tree diagrams for a text,Have access to tree diagrams for a text while offline,
+T14,User,Mobile Device,Online,Download a grammar,Have access to a grammar while offline,

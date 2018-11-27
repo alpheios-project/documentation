@@ -1,0 +1,16 @@
+ID,Who,Precondition,I want to...,In order to...,Notes
+C1,User,,Select a word and get morphological analyses,view morphology of a word,
+C2,User,,Select a word and get a short definition,view a short definition of a word,
+C3,User,,Enter a word and get morphological analyses,view morphology of a word,
+C4,User,,Enter a word and get a short definition,view a short definition of a word,
+C5,User,,Select a word and get a full definition, view a full definition for a word,
+C6,User,,Link from morphological attributes to corresponding grammar entry,explore specific grammatical concept,
+C7,User,,Browse a grammar,explore grammatical concepts,
+C8,User,,Link from morphological attributes of a word to the corresponding inflection table(s),examine inflection details in context,
+C9,User,,Browse inflection tables,explore inflection tables,
+C10,User,annotated text,Link from morphological attributes to corresponding tree diagram,explore sentence structure,
+C11,User,logged in,save a word in a text with context to my wordlist, Save words of interest, see also auth user stories
+C12,User,logged in,save a comment on a text, make notes on a text, see also auth user stories
+C13,Application,,capture all user interactions,,
+C14,User,,search online for a selected word,find other information about a word,
+
