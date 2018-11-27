@@ -1,21 +1,26 @@
 ## Products
 
-### Web Extensions (Chrome and Firefox)
-
-The [webextension](https://github.com/alpheios-project/webextension) repository contains the code enables Alpheiso 
-to act as a browser extension (according to the [https://browserext.github.io/browserext/](Web Extension API)). 
-It relies on the Alpheios modules for most Alpheios functionality, and itself contains the code for embedding 
-itself in the browser toolbar, menus and content pages.
+### Browser Extensions
+The Browser Extensions for Chrome, Safari and Firefox which work with any text anywhere on the desktop only. The [webextension](https://github.com/alpheios-project/webextension) repository contains the code enables Alpheios 
+to act as a browser extension. It relies on the Alpheios modules for most Alpheios functionality, and itself contains the code for embedding itself in the browser toolbar, menus and content pages.
 
 ### Alpheios Embedded Library
+
+The Embedded library allows text providers to enable Alpheios functionality to be embedded directly in their pages without requiring users to install the Alpheios browser extension to access it.
 
 The [embed-lib](https://github.com/alpheios-project/embed-lib) repository contains the code for embedding the Alpheios
 library in a specific HTML page.  It relies on the Alpheios modules for most Alpheios functionality, and itself 
 contains the API code for embedding Alpheios in any HTML page.
 
-### Alpheios PWA Prototype
-The [pwa-prototype](https://github.com/alpheios-project/pwa-prototype) repository contains the prototype progressive web 
-application code. This is in prototype stage. Eventually embed-lib and pwa-prototype may be merged.
+### Alpheios Reader Application
+The Alpheios Reader Application will be an Alpheios-hosted Reading Environment implemented as a Progressive Web Application.
+
+Various prototypes for this are underway.  The [pwa-prototype](https://github.com/alpheios-project/pwa-prototype) repository contains a prototype prototype mobile UI served as a progressive web application, relying on the Alpheios modules for core Alpheios functionality. The [alpheios-nemo-ui](https://github.com/alpheios-project/alpheios_nemo_ui) is a Python Flask Application which serves text content. It uses the Alpheios embedded library to provide Alpheios core functionality.  
+
+## User Stories
+
+![Use Case Diagram](app-use-cases.svg)
+
 
 ## Core Libraries
 
