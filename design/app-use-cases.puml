@@ -1,0 +1,41 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam usecase {
+  ArrowColor<< webextension >> black
+  ArrowColor<< embeddedLibrary >> blue
+  ArrowColor<< readerApp >> red
+  BorderColor gray
+
+}
+skinparam actor {
+  BorderColor<< webextension >> black
+  BorderColor<< embeddedLibrary >> blue
+  BorderColor<< readerApp >> red
+
+}
+	
+actor user1 <<webextension>>
+rectangle userstories {
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<webextension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<webextension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<webextension>>
+  
+}
+actor user2 <<embeddedLibrary>>
+rectangle userstories {
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<embeddedLibrary>>
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<embeddedLibrary>>
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<embeddedLibrary>>
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<embeddedLibrary>>
+  
+}
+actor user3 <<readerApp>>
+rectangle userstories {
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<readerApp>>
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<readerApp>>
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/text-user-stories.csv text]]) <<readerApp>>
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<readerApp>>
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<readerApp>>
+  
+}
+@enduml
