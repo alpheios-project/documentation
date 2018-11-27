@@ -11,4 +11,4 @@ M9,User,Offline and annotated text,Access pre-cached tree diagram for a word in 
 M10,User,Offline,Access grammar,access grammar while offline,
 M11,User,Offline,Access inflection-tables,access inflection tables while offline,
 M12,User,Offline,Search for a word within downloaded content,find occurences of a word while offline,
-M13,Application,,Present mobile ui components and event handlers,give the user a natively mobile experience
+M13,Application,,Present mobile ui components and event handlers,give the user a natively mobile experience,
