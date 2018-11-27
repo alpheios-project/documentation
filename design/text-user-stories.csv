@@ -1,0 +1,16 @@
+ID,Who,Where,Precondition,I want to...,In order to...,Notes
+T1,User,Mobile Device,Online,Browse available texts,Find a text to read,
+T2,User,Mobile Device,Online,Select a text to read,Access a text to read,
+T3,User,Mobile Device,Online,Select a text to read while offline,Have acess a text while offline,
+T4,User,Mobile Device,Online,Select one or more sections of a text to read while offline,Have acess a text while offline,
+T5,User,Mobile Device,Online,Read a text,Read a text,
+T6,User,Mobile Device,Offline,Read a text,Read a text while offline,
+T7,User,PC,Online,Browse available texts, Find a text to read
+T8,User,PC,Online,Select a text to read, Access a text to read
+T9,User,PC,Online,Bookmark my place in a text, Save a marker at a specific point in a text
+T10,User,Mobile Device,Online,pick up reading at a bookmarked place in a text, return to a specific point in a text 
+T11,User,Mobile Device,Online,Download morphology for a text,Have access to all morphology for a text while offline
+T12,User,Mobile Device,Online,Download short definitions for a text,Have access to all short definitions for a text while offline
+T13,User,Mobile Device,Online,Download tree diagrams for a text,Have access to tree diagrams for a text while offline
+T14,User,Mobile Device,Online,Download a grammar,Have access to a grammar while offline
+T15,Application,Mobile Device,Online,Cache full definition requests,allow user to re-access full definitions while offline
