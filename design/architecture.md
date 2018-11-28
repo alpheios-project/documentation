@@ -35,41 +35,41 @@ These modules are dependencies for the higher level Alpheios products. Each of t
 #### Data Models
 [alpheios-data-models](https://github.com/alpheios-project/data-models) contains core data model objects
 
-### Components
+#### Components
 [alpheios-components](https://github.com/alpheios-project/components) contains ui components and controllers and supporting libraries . The currently separate [alpheios-inflection-tables](https://github.com/alpheios-project/inflection-tables) and [alpheios-experience](https://github.com/alpheios-project/experience) repos should be merged into this one.
 
-### Client Adapters
+#### Client Adapters
 [alpheios-client-adapters](https://github.com/alpheios-project/client-adapters) contains client adapter libraries for webservice interactions (work in progress, it's an aggregation of previously separate adapter repositories, [alpheios-lexicon-client](https://github.com/alpheios-project/lexicon-client), [alpheios-morph-client](https://github.com/alpheios-project/morph-client), [alpheios-res-client](https://github.com/alpheios-project/res-client), [alpheios-lemma-client](https://github.com/alpheios-project/lemma-client) 
 
-### Build Tools
+#### Build Tools
 [alpheios-node-build](https://github.com/alpheios-project/node-build) is a set of common libraries for building and optimizing the code
 
 
-## Web Services
+### Web Services
 
-### Morphology Services
+#### Morphology Services
 
-### Lexicon Services
+#### Lexicon Services
 
-### Grammars
+#### Grammars
 
-## Other Supporting Code
+### Other Supporting Code
 
-### CapiTainS
-
-...
-
-### Gardener
+#### CapiTainS
 
 ...
 
-## Auxiliary Modules
+#### Gardener and Arethusa
 
-### Inflection Games
+...
 
-### Lexical Tests
+### Auxiliary Modules
 
-## Annotation Tools
+#### Inflection Games
+
+#### Lexical Tests
+
+## Alpheios Annotation Tools
 
 ### Alignment Editor
 
