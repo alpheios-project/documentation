@@ -1,0 +1,76 @@
+@startuml
+
+participant VueComponent as V
+participant UIController as C
+participant LexicalQuery as L
+participant TreebankClient as T
+participant MorphologyClient as M
+participant LexiconClient as X
+participant ShortDefinitionIndex as S
+participant FullDefinitionIndex as D
+participant FullDefinition as F
+participant InflectionTables as I
+participant Grammar as G
+participant TranslationService as A
+participant RemoteService as R
+participant RemoteURL as U
+
+
+C -> L: getData
+L -> T: getHomonym
+T -> R: fetch
+R -> T: XMLData
+T -> T: Transform
+T -> L: Homonym
+L -> C: Event
+C -> V: Data(Homonym)
+L -> M: getHomonym
+M -> R: fetch
+R -> M: JSONData
+M -> M: Transform
+M -> L: Homonym
+L -> C: Event
+C -> V: Data(Homonym)
+C -> I: getInflectionViewSet
+I -> C: InflectionViewSet
+C -> V: Data(InflectionViewSet)
+L -> A: getTranslations
+A -> R: fetch
+R -> A: JSONData
+A -> A: Transform
+A -> L: Translations
+L -> C: Event
+C -> V: Data(Translations)
+L -> X: getShortDefs
+X -> U: GET
+U -> X: CSVData(index)
+X -> X: Transform
+X -> X: Cache(index)
+X -> L: Definitions
+L -> C: Event
+C -> V: Data(Definitions)
+L -> X: getFullDefs
+X -> U: GET
+U -> X: CSVData(index)
+X -> X: Transform
+X -> X: Cache(index)
+X -> R: fetch(defs)
+R -> X: HTMLData
+X -> L: Definitions
+L -> C: Event
+C -> V: Data(Definitions)
+C -> G: getGrammarResource
+G -> R: fetch(index)
+R -> G: CSVData
+G -> G: Transform
+G -> G: Cache
+G -> C: URL
+C -> V: Data(grammarURL)
+V -> U: GET
+U -> V: HTMLResource
+C -> V: Data(treebankURL)
+V -> U: GET
+U -> V: HTMLResource
+
+
+@enduml

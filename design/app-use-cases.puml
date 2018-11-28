@@ -33,7 +33,7 @@ actor user3 <<readerApp>>
 rectangle userstories {
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<readerApp>>
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<readerApp>>
-  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/text-user-stories.csv text]]) <<readerApp>>
+  user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/reader-user-stories.csv reader]]) <<readerApp>>
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<readerApp>>
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<readerApp>>
   
