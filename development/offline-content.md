@@ -64,7 +64,7 @@ The navigation user stories require that we provide an interface to navigate the
 * as dynamically produced HTML files
 * as JSON in response to a remote service call
 
-For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features. We could consider a static page approach but it would require the development of workflow tools to generate the content in a scalable manner, and build out a navigation interface. 
+For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features. We could consider a static page approach but it would require the development of workflow tools to generate the content in a scalable manner, and we would need to build a text navigation interface. 
 
 We have an implementation of a [DTS API](https://distributed-text-services.github.io/specifications/) which serve the texts and tables of contents as raw data upon which we could build a native Javascript reader. This is probably the desired long term approach for the reader application but we may want to start by using the existing [Python/Flask application framework](https://github.com/alpheios-project/alpheios_nemo_ui) which provides a dynamic text navigation and reading environment as a web application. We could make this into a progressive web application to serve the text content. 
 
