@@ -25,7 +25,12 @@ Various prototypes for this are underway.  The [pwa-prototype](https://github.co
 
 ![Use Case Diagram](app-use-cases.svg)
 
-***(Open the diagram in a new tab to activate the links to the user stories)***
+***(Open the diagram in a new tab to activate the embedded links to the user stories)***
+[Core]https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv
+[Config[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv
+[Auth]https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv
+[Mobile]https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv
+[Reader]https://github.com/alpheios-project/documentation/blob/master/design/reader-user-stories.csv
 
 ### Client Side Libraries (Javascript)
 
