@@ -1,24 +1,25 @@
 @startuml
 skinparam packageStyle rectangle
 skinparam usecase {
-  ArrowColor<< webextension >> black
+  ArrowColor<< browserExtension >> black
   ArrowColor<< embeddedLibrary >> blue
   ArrowColor<< readerApp >> red
   BorderColor gray
 
 }
 skinparam actor {
-  BorderColor<< webextension >> black
+  BorderColor<< browserExtension >> black
   BorderColor<< embeddedLibrary >> blue
   BorderColor<< readerApp >> red
 
 }
 	
-actor user1 <<webextension>>
+actor user1 <<browserExtension>>
 rectangle userstories {
-  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<webextension>>
-  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<webextension>>
-  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<webextension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv core]]) <<browserExtension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<browserExtension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<browserExtension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/browserextension-user-stories.csv browserext]]) <<browserExtension>>
   
 }
 actor user2 <<embeddedLibrary>>
@@ -27,6 +28,7 @@ rectangle userstories {
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<embeddedLibrary>>
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<embeddedLibrary>>
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<embeddedLibrary>>
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/embedlib-user-stories.csv embedlib]]) <<embeddedLibrary>>
   
 }
 actor user3 <<readerApp>>
