@@ -41,42 +41,12 @@ Another scenario to consider is if and how cached data is synced for a user acro
 *Estimates still need to be prepared for all other data sources.*
 
 ## Current Strategies for Client Side Caching
+
 Currently, the PWA prototype uses no pre-caching of this data and requests for text and lexical query data are cached via the CacheAPI on a per-request basis. The app javascript itself is the only thing that is currently pre-cached.
 
-The LexicalQuery code calls upon a number of remote services to retrieve data. Some data is kept in memory as Javascript objects but no other client-side caching strategy is used.  There are some optimizations we could make to the existing code to reduce memory usage (for example, combining short definition and full definition index files, moving full definition index files to the server elminating the need for the full definition index, moving all definition index functionality to the server) but it makes sense to examine these in the context of the overall need for a strategy for offline content.
- 
-This [article](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa) recommends that we use the CacheAPI only for the static network resources needed to load the app (i.e. the core javascript, css, icons, and use IndexedDB for all dynamic data.
+For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features.
 
-## Data Sources and Design Discussion
-
-### Text
-
-For the most part, the source data for the texts we will publish for the Reader are TEI/XML files.(User-supplied texts may be supplied as plain text but could be transformed into TEI/XML if need be). These could be served in a number of ways:
-
-* as static HTML files
-* as dynamically produced HTML files
-* as XML in response to a remote service call
-* as HTML in response to a remote service call 
-
-The navigation user stories require that we provide an interface to navigate the text tables of contents, and these tables of contents could also be served in a number of ways:
-
-* as static HTML files
-* as dynamically produced HTML files
-* as JSON in response to a remote service call
-
-For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features. We could consider a static page approach for the Reader Application but it would require the development of workflow tools to generate the HTML content from the source XML in a scalable manner (as new texts are added or texts are corrected), and we would need to build a text navigation interface. 
-
-We have an implementation of a [DTS API](https://distributed-text-services.github.io/specifications/) which serve the texts and tables of contents as raw data. The desired long term approach for the reader application may be to build a native Javascript reader which retrieves text via calls to the DTS API. 
-
-However it may be beneficial to start by using the existing [Nemo Python/Flask application framework](https://github.com/alpheios-project/alpheios_nemo_ui) which provides a dynamic text navigation and reading environment as a web application. We could make this into a progressive web application to serve the text content. 
-
-Both the DTS API and the Nemo Application are part of the [Capitains Framework](http://capitains.org/) which already has workflow support for validating and publishing texts from GitHub repositories. Work is also already being done by other users of this framework to integrate with ElasticSearch for search and to add  side-by-side facing translations, etc. We might be able to take advantage of some of those efforts.
-
-Building a native Javascript reader would lend itself more naturally to using an IndexedDb approach to caching the text content for offline use, whereas using either the Flask application or static HTML pages lends itself more to use of the CacheAPI.
-
-### Lexical Query
-
-Currently almost all Lexical Query data is retrieved from remote services. The current flow of data is something like the following:
+The LexicalQuery code calls upon a number of remote services to retrieve data. Some data is kept in memory as Javascript objects but no other client-side caching strategy is used.  The current flow of data is something like the following:
 
 ![LexicalQueryDataFlow](data-services/lexicalquerydataflow.svg)
 
@@ -121,9 +91,40 @@ There are some consistently repeated patterns in this current flow:
 6. Retrieve URL from the index lookup table
 7. Give the URL to the view component to populate the src attribute of an iframe
 
-(We would like to eventually eliminate the use of Pattern D and iFrames, however)
+We would like to eventually eliminate the use of Pattern D and iframes and there are other optimizations we could make to the existing code to simplify the client side retrieval and reduce memory usage (for example, combining short definition and full definition index files, moving full definition index files to the server elminating the need for the full definition index, moving all definition index functionality to the server) but it makes sense to examine these in the context of the overall need for a strategy for offline content.
 
-One approach to the design for offline content would be to move indexing behavior in Patterns B and C to the server and insert use of IndexedDB for caching service response, so we would have, for example
+## Design Discussion
+
+This [article](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa) recommends that we use the CacheAPI only for the static network resources needed to load the app (i.e. the core javascript, css, icons, and use IndexedDB for all dynamic data.
+
+### Text
+
+For the most part, the source data for the texts we will publish for the Reader are TEI/XML files.(User-supplied texts may be supplied as plain text but could be transformed into TEI/XML if need be). These could be served in a number of ways:
+
+* as static HTML files
+* as dynamically produced HTML files
+* as XML in response to a remote service call
+* as HTML in response to a remote service call 
+
+The navigation user stories require that we provide an interface to navigate the text tables of contents, and these tables of contents could also be served in a number of ways:
+
+* as static HTML files
+* as dynamically produced HTML files
+* as JSON in response to a remote service call
+
+We could consider a static page approach for the Reader Application but it would require the development of workflow tools to generate the HTML content from the source XML in a scalable manner (as new texts are added or texts are corrected), and we would need to build a text navigation interface. 
+
+We have an implementation of a [DTS API](https://distributed-text-services.github.io/specifications/) which serve the texts and tables of contents as raw data. The desired long term approach for the reader application may be to build a native Javascript reader which retrieves text via calls to the DTS API. 
+
+However it may be beneficial to start by using the existing [Nemo Python/Flask application framework](https://github.com/alpheios-project/alpheios_nemo_ui) which provides a dynamic text navigation and reading environment as a web application. We could make this into a progressive web application to serve the text content. 
+
+Both the DTS API and the Nemo Application are part of the [Capitains Framework](http://capitains.org/) which already has workflow support for validating and publishing texts from GitHub repositories. Work is also already being done by other users of this framework to integrate with ElasticSearch for search and to add  side-by-side facing translations, etc. We might be able to take advantage of some of those efforts.
+
+Building a native Javascript reader would lend itself more naturally to using an IndexedDb approach to caching the text content for offline use, whereas using either the Flask application or static HTML pages lends itself more to use of the CacheAPI.
+
+### Lexical Query
+
+One approach to the design for offline content would be to move all indexing behavior to the server and insert use of IndexedDB for caching service responses, so we would have, for example
 
 1. Request data from IndexedDb
 2. If present, goto Step 5
@@ -139,9 +140,13 @@ This would introduce the following requirements for the IndexedDB storage:
 
 And, because the user stories call for data for entire texts or languages to be able to be pre-cached for offline use, we need to introduce new data retrieval patterns for batch population of the local IndexedDB.
 
-We may also want to consider hybrid strategies, in which some data is either embedded directly within the texts, or supplied as accompanying data files for a text. For example, morphology could be supplied in a condensed form directly in data attributes, and a new morphology adapter developed to retrieve the data directly from the text and transform it into the Homonym object. 
+We may also want to consider hybrid strategies. 
 
-Either approach likely imposes workflow requiremenets for preprocessing texts and other resources to prepare for offline use. 
+For text-specific data, some data might be embedded directly within the texts, or supplied as accompanying data files for a text. For example, morphology could be supplied in a condensed form directly in data attributes, and a new morphology adapter developed to retrieve the data directly from the text and transform it into the Homonym object. 
+
+For certain resources, such as the indexed lexicon of short definitions referenced in Pattern B above, pre-caching an entire indexed copy of the resource locally in the IndexedDb might be appropriate, keeping index lookup business logic on the client.
+
+All approaches likely impose some workflow requirements for preprocessing texts and other resources to prepare for offline use. 
 
 
 ### User Data
