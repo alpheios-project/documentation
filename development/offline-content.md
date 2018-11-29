@@ -80,6 +80,70 @@ Currently almost all Lexical Query data is retrieved from remote services. The c
 
 ![LexicalQueryDataFlow](data-services/lexicalquerydataflow.svg)
 
+There are some consistently repeated patterns in this current flow:
+
+**Pattern A: Dynamically Analyzed Data**
+
+1. Fetch dynamic data from a Remote Service
+2. Transform data into Alpheios Data Model Object
+3. Give the data to the view component
+
+**Pattern B: Static Indexed Direct Data**
+
+1. Check to see if static data lookup table is available.
+2. If we have the data lookup table, go to step 6
+3. Fetch a data file from a Remote URL
+4. Transform the data file into a data lookup table
+5. Cache the data lookup table in memory
+6. Retrieve data from the data lookup table
+7. Tranform data into Alpheios Data Model Object
+8. Give the data to the view component
+
+**Pattern C: Static Indexed Indirect Data**
+
+1. Check to see if index lookup table is available.
+2. If we have the index lookup table, go to step 6
+3. Fetch an index from a Remote URL
+4. Transform the index into an index lookup table
+5. Cache the index lookup table in memory
+6. Retrieve index entry from the index lookup table and populate a Remote Service URL Template with it
+7. Fetch data from the URL
+8. Tranform data into Alpheios Data Model Object
+9. Give the data to the view component
+
+**Pattern D: Indexed references to Remote Content/Applications**
+
+1. Check to see if index lookup table is available.
+2. If we have the index lookup table, go to step 6
+3. Fetch an index from a Remote URL
+4. Transform the index into an index lookup table
+5. Cache the index lookup table in memory
+6. Retrieve URL from the index lookup table
+7. Give the URL to the view component to populate the src attribute of an iframe
+
+(We would like to eventually eliminate the use of Pattern D and iFrames, however)
+
+One approach to the design for offline content would be to move indexing behavior in Patterns B and C to the server and insert use of IndexedDB for caching service response, so we would have, for example
+
+1. Request data from IndexedDb
+2. If present, goto Step 5
+3. If not present, fetch data from a Remote Service
+4. Insert data into IndexedDB
+5. Transform data into Alpheios Data Model Object
+6. Give data to the view component
+
+This would introduce the following requirements for the IndexedDB storage:
+
+1. keys which are sensitive to context (e.g. morphology data for word A in text B must be able to be distinguished from word B in text C)
+2. The ability to selectively invalidate entries in an IndexDb when a new version of the source data is made available
+
+And, because the user stories call for data for entire texts or languages to be able to be pre-cached for offline use, we need to introduce new data retrieval patterns for batch population of the local IndexedDB.
+
+We may also want to consider hybrid strategies, in which some data is either embedded directly within the texts, or supplied as accompanying data files for a text. For example, morphology could be supplied in a condensed form directly in data attributes, and a new morphology adapter developed to retrieve the data directly from the text and transform it into the Homonym object. 
+
+Either approach likely imposes workflow requiremenets for preprocessing texts and other resources to prepare for offline use. 
+
+
 ### User Data
 
 Pending
