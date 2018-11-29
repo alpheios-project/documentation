@@ -64,9 +64,13 @@ The navigation user stories require that we provide an interface to navigate the
 * as dynamically produced HTML files
 * as JSON in response to a remote service call
 
-For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features. We could consider a static page approach but it would require the development of workflow tools to generate the content in a scalable manner, and we would need to build a text navigation interface. 
+For the PWA Prototype we used a simple approach of just having a few static HTML files providing the demo text content. We didn't implement any text navigation features. We could consider a static page approach for the Reader Application but it would require the development of workflow tools to generate the HTML content from the source XML in a scalable manner (as new texts are added or texts are corrected), and we would need to build a text navigation interface. 
 
-We have an implementation of a [DTS API](https://distributed-text-services.github.io/specifications/) which serve the texts and tables of contents as raw data upon which we could build a native Javascript reader. This is probably the desired long term approach for the reader application but we may want to start by using the existing [Python/Flask application framework](https://github.com/alpheios-project/alpheios_nemo_ui) which provides a dynamic text navigation and reading environment as a web application. We could make this into a progressive web application to serve the text content. 
+We have an implementation of a [DTS API](https://distributed-text-services.github.io/specifications/) which serve the texts and tables of contents as raw data. The desired long term approach for the reader application may be to build a native Javascript reader which retrieves text via calls to the DTS API. 
+
+However it may be beneficial to start by using the existing [Nemo Python/Flask application framework](https://github.com/alpheios-project/alpheios_nemo_ui) which provides a dynamic text navigation and reading environment as a web application. We could make this into a progressive web application to serve the text content. 
+
+Both the DTS API and the Nemo Application are part of the [Capitains Framework](http://capitains.org/) which already has workflow support for validating and publishing texts from GitHub repositories. Work is also already being done by other users of this framework to integrate with ElasticSearch for search and to add  side-by-side facing translations, etc. We might be able to take advantage of some of those efforts.
 
 Building a native Javascript reader would lend itself more naturally to using an IndexedDb approach to caching the text content for offline use, whereas using either the Flask application or static HTML pages lends itself more to use of the CacheAPI.
 
