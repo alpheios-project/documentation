@@ -26,11 +26,18 @@ Various prototypes for this are underway.  The [pwa-prototype](https://github.co
 ![Use Case Diagram](app-use-cases.svg)
 
 ***(Open the diagram in a new tab to activate the embedded links to the user stories)***
-[Core]https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv
-[Config[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv
-[Auth]https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv
-[Mobile]https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv
-[Reader]https://github.com/alpheios-project/documentation/blob/master/design/reader-user-stories.csv
+
+* [Core](https://github.com/alpheios-project/documentation/blob/master/design/core-user-stories.csv)
+* [Config](https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv)
+* [Auth](https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv)
+* [Mobile](https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv)
+* [Reader](https://github.com/alpheios-project/documentation/blob/master/design/reader-user-stories.csv)
+
+The Browser Extensions must fulfill the Core, Config and Auth user stories
+
+The Embedded Library must fulfill the Core, Config and Auth user stories plus the Mobile stories
+
+The Reader Aplication must fullfill the Core, Config, Auth and Mobile user stories plus the Reader stories
 
 ### Client Side Libraries (Javascript)
 
