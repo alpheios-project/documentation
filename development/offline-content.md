@@ -138,9 +138,7 @@ This would introduce the following requirements for the IndexedDB storage:
 1. keys which are sensitive to context (e.g. morphology data for word A in text B must be able to be distinguished from word B in text C)
 2. The ability to selectively invalidate entries in an IndexDb when a new version of the source data is made available
 
-And, because the user stories call for data for entire texts or languages to be able to be pre-cached for offline use, we need to introduce new data retrieval patterns for batch population of the local IndexedDB.
-
-We may also want to consider hybrid strategies. 
+Because the user stories call for data for entire texts or languages to be able to be pre-cached for offline use, we need to introduce new data retrieval patterns for batch population of the local IndexedDB.
 
 For text-specific data, some data might be embedded directly within the texts, or supplied as accompanying data files for a text. For example, morphology could be supplied in a condensed form directly in data attributes, and a new morphology adapter developed to retrieve the data directly from the text and transform it into the Homonym object. 
 
@@ -151,5 +149,5 @@ All approaches likely impose some workflow requirements for preprocessing texts 
 
 ### User Data
 
-Pending
+It seems likely that the User Data requirement will require an online user data storage service with the ability to selectively populate a local IndexedDb with data from that service. There will likely also be some complex scenarios in which user data combines with lexical query data to populate views.
 
