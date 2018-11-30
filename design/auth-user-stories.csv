@@ -1,7 +1,7 @@
 ID,Who,I want to...,In order to...,Notes
 A1,User,create a new Alpheios user account authenticated via Social IDP,store data,
 A2,User,create a new user account supplying a username and passord,store data,
-A3,User,login to my account,access my Alpheios data,hhis particular use case is about data related to interaction with Alpheios (such as word lists, comments, etc.) This login user story will be a prerequisite for other user stories for how and where the user interacts with that data,
+A3,User,login to my account,access my Alpheios data,this particular use case is about data related to interaction with Alpheios (such as word lists comments etc.) This login user story will be a prerequisite for other user stories for how and where the user interacts with that data,
 A4,User,request a password reset on my account,access my account after losing my password,
 A5,User,manually change the password on my account,have a new password,
 A6,User,see the latest terms of service,be informed of my rights,
