@@ -1,7 +1,7 @@
 ID,Who,I want to...,In order to...,Notes
-A1,User,create a new user account using a Social IDP,store data,
+A1,User,create a new Alpheios user account, authenticated via Social IDP,store data,
 A2,User,create a new user account supplying a username and passord,store data,
-A3,User,login to my account,access my personal data,
+A3,User,login to my account,access my Alpheios data,hhis particular use case is about data related to interaction with Alpheios (such as word lists, comments, etc.) This login user story will be a prerequisite for other user stories for how and where the user interacts with that data,
 A4,User,request a password reset on my account,access my account after losing my password,
 A5,User,manually change the password on my account,have a new password,
 A6,User,see the latest terms of service,be informed of my rights,
@@ -9,7 +9,7 @@ A7,User,save data,save a specific piece of data,specific data types expanded upo
 A8,User,remove data,remove a specific piece of data,specific data types expended upon in other stories
 A9,User,see all  of a specific type of data in my account,see the aggregation of my data,specific data types expanded upon in other stories
 A10,User,download the data stored for my user account,do something with it outside of Alpheios,
-A11,Admin,push a new terms of service to users,to update the terms,
+A11,Admin,push a new terms of service to users upon login,to update the terms,
 A12,Admin,enforce a storage limit on a user account,conserve resources,
 A13,User,delete my account,remove my data from Alpheios,
 A14,Admin,delete a user account,prevent misuse,
