@@ -13,4 +13,8 @@ C11,User,logged in,save a word in a text with context to my wordlist, Save words
 C12,User,logged in,save a comment on a text, make notes on a text, see also auth user stories
 C13,Application,,capture all user interactions,,
 C14,User,,search online for a selected word,find other information about a word,
+C15,User,,see usage examples for a selected word,see other contexts in which a word may appear,
+C16,User,,see usage examples for the specific form of a selected word,see other contexts in which a word form may appear,
+C17,User,,filter usage examples of a word or form by author,see examples only by certain authors of interest,
+C18,User,,sort usage examples of a word or form by various TBD criteria,make the list manageable to understand,
 
