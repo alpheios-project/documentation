@@ -1,0 +1,12 @@
+ID,Who,Precondition,I want to...,In order to...,Notes
+T11,User,Online,Pre-cache morphology for a text or page,Have immediate access to all morphology for a text while offline,
+T12,User,Online,Pre-cache short definitions for a text or page,Have immediate access to all short definitions for a text or page while offline,
+T13,User,Online,Pre-cache tree diagrams for a text or page,Have immediate access to tree diagrams for a text or page while offline,
+T14,User,Online,Pre-cache a grammar,Have immediate access to a grammar while offline,
+T15,User,Offline,Access full definitions I have previously viewed while online, access full definitions while offline,
+T16,User,Offline,Access pre-cached morphology,access morphology while offline,
+T17,User,Offline,Access pre-cached short definitions,access short definitions while offline,
+T18,User,Offline and annotated text,Access pre-cached tree diagram,access tree diagrams while offline,
+T19,User,Offline,Access pre-cached grammar,access grammar while offline,
+T20,User,Offline,Access pre-cached inflection-tables,access inflection tables while offline,
+
