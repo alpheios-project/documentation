@@ -20,6 +20,7 @@ rectangle userstories {
   user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/auth-user-stories.csv auth]]) <<browserExtension>>
   user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<browserExtension>>
   user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/browserextension-user-stories.csv browserext]]) <<browserExtension>>
+  user1 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/offline-user-stories.csv offline]]) <<browserExtension>>
   
 }
 actor user2 <<embeddedLibrary>>
@@ -29,6 +30,7 @@ rectangle userstories {
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<embeddedLibrary>>
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<embeddedLibrary>>
   user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/embedlib-user-stories.csv embedlib]]) <<embeddedLibrary>>
+  user2 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/offline-user-stories.csv offline]]) <<embeddedLibrary>>
   
 }
 actor user3 <<readerApp>>
@@ -38,6 +40,7 @@ rectangle userstories {
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/reader-user-stories.csv reader]]) <<readerApp>>
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/mobile-user-stories.csv mobile]]) <<readerApp>>
   user3 -up--> ([[https://github.com/alpheios-project/documentation/blob/master/design/config-user-stories.csv config]]) <<readerApp>>
+  user3 --> ([[https://github.com/alpheios-project/documentation/blob/master/design/offline-user-stories.csv offline]]) <<readerApp>>
   
 }
 @enduml
