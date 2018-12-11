@@ -1,0 +1,53 @@
+ID,Who,Application,Precondition,I want to...,In order to...,Notes
+C1,User,Browser extension and Reader,,Select a word and get morphological analyses,view morphology of a word,
+C2,User,Browser extension and Reader,,Select a word and get a short definition,view a short definition of a word,
+C3,User,Browser extension and Reader,,Enter a word and get morphological analyses,view morphology of a word,
+C4,User,Browser extension and Reader,Enter a word and get a short definition,view a short definition of a word,
+C5,User,Browser extension and Reader,,Select a word and get a full definition, view a full definition for a word,
+C6,User,Browser extension and Reader,,Link from morphological attributes to corresponding grammar entry,explore specific grammatical concept,
+C7,User,Browser extension and Reader,,Browse a grammar,explore grammatical concepts,
+C8,User,Browser extension and Reader,,Link from morphological attributes of a word to the corresponding inflection table(s),examine inflection details in context,
+C9,User,Browser extension and Reader,,Browse inflection tables,explore inflection tables,
+C10,User,Browser extension and Reader,annotated text,Link from morphological attributes to corresponding tree diagram,explore sentence structure,
+C11,User,Browser extension and Reader,logged in,save a word in a text with context to my wordlist, Save words of interest, see also auth user stories
+C13,Application,Browser extension and Reader,capture all user interactions,,
+C15,User,Browser extension and Reader,,see usage examples for a selected word,see other contexts in which a word may appear,
+C16,User,Browser extension and Reader,,see usage examples for the specific form of a selected word,see other contexts in which a word form may appear,
+C17,User,Browser extension and Reader,,filter usage examples of a word or form by author,see examples only by certain authors of interest,
+C19,User,Browser extension and Reader,,filter usage examples of a word or form by wprk,see examples only by certain authors of interest,
+A1,User,Browser extension and Reader,,create a new Alpheios user account authenticated via Social IDP,store data,
+A2,User,Browser extension and Reader,,create a new user account supplying a username and passord,store data,
+A3,User,Browser extension and Reader,,login to my account,access my Alpheios data,this particular use case is about data related to interaction with Alpheios (such as word lists comments etc.) This login user story will be a prerequisite for other user stories for how and where the user interacts with that data
+A4,User,Browser extension and Reader,,request a password reset on my account,access my account after losing my password,
+A5,User,Browser extension and Reader,,manually change the password on my account,have a new password,
+A6,User,Browser extension and Reader,,see the latest terms of service,be informed of my rights,
+A7,User,Browser extension and Reader,,save data,save a specific piece of data,specific data types expanded upon in other stories
+A8,User,Browser extension and Reader,,remove data,remove a specific piece of data,specific data types expended upon in other stories
+A9,User,Browser extension and Reader,,see all  of a specific type of data in my account,see the aggregation of my data,specific data types expanded upon in other stories
+A10,User,Browser extension and Reader,Online on desktop,download the data stored for my user account,do something with it outside of Alpheios,
+A11,Admin,Browser extension and Reader,,push a new terms of service to users upon login,to update the terms,
+A12,Admin,Browser extension and Reader,,enforce a storage limit on a user account,conserve resources,
+A13,User,Browser extension and Reader,,delete my account,remove my data from Alpheios,
+A14,Admin,Browser extension and Reader,,delete a user account,prevent misuse,
+A15,Application,Browser extension and Reader,,store data by user id,respond to a user request to store data,
+A16,Application,Browser extension and Reader,,retrieve data by user id,respond to a user request to show their data,
+A17,Application,Browser extension and Reader,,remove data by user id,respond to a user request to remove their data,
+F1,User,Browser extension,,Set a preferred language,have quicker access to desired functionality,Reader should always set itself to correct language,
+F2,User,Browser extension and Reader,,Set a preferred lexicon for short definitions by language,use my dictionary of preference,
+F3,User,Browser extension and Reader,,Set a preferred lexicon for full definitions by language,use my dictionary of preference,
+F4,User,Browser extension and Reader,Desktop,Set a preferred font size for use on desktop,adjust display to my preference,
+F4b,User,Browser extension and Reader,Mobile,Set a preferred font size for use on mobile device,adjust display to my preference,
+F7,User,Browser extension and Reader,,Enable lemma translations,get lemma translations in a language of my preference,
+M1,Application,Reader,App accessed from a mobile device,Present mobile ui components and event handlers,give the user a natively mobile experience,
+M2,User,Reader,App accessed from a mobile device,Zoom specific screens for magnified viewing,be able to work with content with greater screen real estate,
+T1,User,Reader,Online,Browse available texts,Find a text to read,
+T2,User,Reader,Online,Select a text to read,Access a text to read,
+T3,User,Reader,Online,Read a text,Read a text,
+T4,User,Reader,Online,Navigate a table of contexts for a text,Read a specific portion of a text,
+T9,User,Reader,Online & Logged in,Upload my own text,make a text available for use with Alpheios,see also auth user stories
+O5,User,Reader,Offline,Access full definitions I have previously viewed while online, access full definitions while offline,limited to simple caching of remote requests
+O11,User,Reader,Offline,Access short definitions I have previously viewed while online, access short definitions while offline,limited to simple caching of remote requests
+O12,User,Reader,Offline,Access a text I have previously viewed while online, access text while offline,limited to simple caching of remote requests
+O13,User,Reader,Offline,Access morphology I have previously viewed while online, access morphology while offline,limited to simple caching of remote requests
+B1,User,Browser Extension,Use alpheios on any web page,access alpheios resources for any page published on the web,
+
