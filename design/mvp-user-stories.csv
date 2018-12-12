@@ -49,5 +49,5 @@ O5,User,Reader,Offline,Access full definitions I have previously viewed while on
 O11,User,Reader,Offline,Access short definitions I have previously viewed while online, access short definitions while offline,limited to simple caching of remote requests
 O12,User,Reader,Offline,Access a text I have previously viewed while online, access text while offline,limited to simple caching of remote requests
 O13,User,Reader,Offline,Access morphology I have previously viewed while online, access morphology while offline,limited to simple caching of remote requests
-B1,User,Browser Extension,Use alpheios on any web page,access alpheios resources for any page published on the web,
+B1,User,Browser Extension,,Use alpheios on any web page,access alpheios resources for any page published on the web,
 
