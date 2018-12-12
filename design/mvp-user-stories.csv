@@ -32,7 +32,7 @@ A14,Admin,Browser extension and Reader,,delete a user account,prevent misuse,
 A15,Application,Browser extension and Reader,,store data by user id,respond to a user request to store data,
 A16,Application,Browser extension and Reader,,retrieve data by user id,respond to a user request to show their data,
 A17,Application,Browser extension and Reader,,remove data by user id,respond to a user request to remove their data,
-F1,User,Browser extension,,Set a preferred language,have quicker access to desired functionality,Reader should always set itself to correct language,
+F1,User,Browser extension,,Set a preferred language,have quicker access to desired functionality,Reader should always set itself to correct language
 F2,User,Browser extension and Reader,,Set a preferred lexicon for short definitions by language,use my dictionary of preference,
 F3,User,Browser extension and Reader,,Set a preferred lexicon for full definitions by language,use my dictionary of preference,
 F4,User,Browser extension and Reader,Desktop,Set a preferred font size for use on desktop,adjust display to my preference,
