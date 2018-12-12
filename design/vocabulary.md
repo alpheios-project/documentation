@@ -51,6 +51,8 @@ A10. As an application I want to be able to create a target vocabulary proficien
 
 A11. As an application I want to be able to retrieve data about a word from external linked data sources so that I can present these sources to the user.
 
+A12. As an application I want to store data about words using common standards so that this data is interoperable and sharable.
+
 ## Architectural Perspective
 
 I1. Vocabulary functionality should be available via a API
