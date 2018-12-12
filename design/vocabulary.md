@@ -37,6 +37,8 @@ A4. As an application I want to retrieve data about a word on a user's word list
 
 A5. As an application I want to store occurrences of a user's interaction with a word on their word list so that this data is available for future uses.
 
+A5b. As an application I want to store occurrences of a user's interaction with any word so that this data is available for future uses.
+
 A6. As an application I want to retrieve data about occurrences of a user's interaction with a word on their word list so that I can present individualized features.
 
 A7. As an application I want to be able to store the context of any word that the user looks up (e.g. the sentence)  so that I can use it to analyze collocations to classify uses, detect alternative meanings and enable ranked searches for similar occurrences in the corpus.      
@@ -47,7 +49,7 @@ A9. As an application I want to be able to query statistical information about h
 
 A10. As an application I want to be able to create a target vocabulary proficiency map from a target text that reflects all uses of each word in that text so that I can compare a user's word list against that map.
 
-A11. As a application I want to be able to retrieve data about a word from external linked data sources so that I can present these sources to the user.
+A11. As an application I want to be able to retrieve data about a word from external linked data sources so that I can present these sources to the user.
 
 ## Architectural Perspective
 
