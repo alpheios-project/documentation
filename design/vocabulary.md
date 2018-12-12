@@ -4,7 +4,7 @@
 
 ### User Perspective
 
-U1. As a user I want to save a word to my list of words so that I can study it.
+U1. As a user I want to save a word, with its context, to my list of words so that I can study it.
 
 U2. As a user I want to be able to specify and change a degree of confidence in my knowledge of the word so that I can prioritize it.
 
