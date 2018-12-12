@@ -2,7 +2,7 @@ ID,Who,Application,Precondition,I want to...,In order to...,Notes
 C1,User,Browser extension and Reader,,Select a word and get morphological analyses,view morphology of a word,
 C2,User,Browser extension and Reader,,Select a word and get a short definition,view a short definition of a word,
 C3,User,Browser extension and Reader,,Enter a word and get morphological analyses,view morphology of a word,
-C4,User,Browser extension and Reader,Enter a word and get a short definition,view a short definition of a word,
+C4,User,Browser extension and Reader,,Enter a word and get a short definition,view a short definition of a word,
 C5,User,Browser extension and Reader,,Select a word and get a full definition, view a full definition for a word,
 C6,User,Browser extension and Reader,,Link from morphological attributes to corresponding grammar entry,explore specific grammatical concept,
 C7,User,Browser extension and Reader,,Browse a grammar,explore grammatical concepts,
