@@ -1,4 +1,4 @@
-# Alpheios User Vocabulary Requirements
+# Alpheios User Word List Requirements
 
 ## User Stories
 
@@ -55,15 +55,15 @@ A12. As an application I want to store data about words using common standards s
 
 ## Architectural Perspective
 
-I1. Vocabulary functionality should be available via a API
+I1. Wordlist functionality should be available via a API
 
-I2. Vocabulary functionality should be language-agnostic (i.e same API for latin, greek, etc)
+I2. Wordlist functionality should be language-agnostic (i.e same API for latin, greek, etc)
 
-I3. It must be possible to aggregate user vocabulary data across multiple applications
+I3. It must be possible to aggregate user wordlist data across multiple applications
 
-I4. It must be possble to distribute all or part of user vocabulary data to individual applications and devices.
+I4. It must be possble to distribute all or part of user wordlist data to individual applications and devices.
 
-I5. User identification and authentication be decoupled from the vocabulary functionality
+I5. User identification and authentication be decoupled from the wordlist functionality
 
 I6. Multiple applications must be able to store and retrieve data upon behalf of the same single user
 
