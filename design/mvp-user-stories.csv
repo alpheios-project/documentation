@@ -10,7 +10,7 @@ C8,User,Browser extension and Reader,,Link from morphological attributes of a wo
 C9,User,Browser extension and Reader,,Browse inflection tables,explore inflection tables,
 C10,User,Browser extension and Reader,annotated text,Link from morphological attributes to corresponding tree diagram,explore sentence structure,
 C11,User,Browser extension and Reader,logged in,save a word in a text with context to my wordlist, Save words of interest, see also auth user stories
-C13,Application,Browser extension and Reader,capture all user interactions,,
+C13,Application,Browser extension and Reader,,capture all user interactions,,
 C15,User,Browser extension and Reader,,see usage examples for a selected word,see other contexts in which a word may appear,
 C16,User,Browser extension and Reader,,see usage examples for the specific form of a selected word,see other contexts in which a word form may appear,
 C17,User,Browser extension and Reader,,filter usage examples of a word or form by author,see examples only by certain authors of interest,
