@@ -22,6 +22,8 @@ U8. As a user I want to know how often a word appears in a given form in the lit
 
 U9. As a user I want to be able to store data about a word.
 
+U10. As a user I want to be able to generate a vocabulary list at the end a reading session so that I can see everything I had to look up in that session.
+
 
 ### Application Perspective
 
