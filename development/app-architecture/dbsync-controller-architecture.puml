@@ -1,0 +1,69 @@
+
+@startuml
+autonumber "<b>[000]"
+actor User
+participant WordListVueComponent as W
+participant UIController as U
+participant WordListController as C
+participant UserDataQuery as Q
+participant LexicalQuery as L
+participant DBSyncController as S
+database IndexedDb as I
+participant ProtectedClientAdapter as P
+participant AuthOAPI as O
+participant UserDataAPI as D
+database RemoteDataStore as B
+
+== App Initialization ==
+C -> L: Subscribe(MORPH_DATA_READY)
+U -> C: Subscript(WORDLIST_DATA_UPDATE))
+
+== First Display of WordList ==
+User -> W: ShowWordList
+W -> U: GetWordList
+U -> C: GetWordList
+C -> Q: GetUserData
+Q -> S: GetData
+S -> P: GetRemoteData
+P -> D: GetData
+D -> O: AuthenticateUser
+O -> P: Authenticated
+P -> D: UserID
+D -> B: GetQuery
+B -> D: Data
+D -> P: Data
+P -> S: Data
+S -> I: GetLocalData
+I -> S: Data
+S -> S: MergeData
+S -> Q: Data
+Q -> C: UserData
+C -> C: CreateWordList
+C -> U: WordList
+U -> W: WordList
+W -> User: WordList View
+
+== Update WordList On Lookup ==
+User -> U: LookupWord
+U -> L: GetData
+L -> C: Publish(MORPH_DATA_READY)
+C -> Q: UpdateUserData
+Q -> S: UpdateData
+S -> I: UpdateLocalData
+I -> S: Success
+S -> P: UpdateRemoteData
+P -> D: UpdateData
+D -> O: AuthenticateUser
+O -> P: Authenticated
+P -> D: UserID
+D -> B: UpdateQuery
+B -> D: Success
+D -> P: Success
+P -> S: Success
+S -> Q: Success
+Q -> C: Success
+C -> U: Publish(WORDLIST_DATA_READY)
+U -> W: WordList
+
+
+@enduml
