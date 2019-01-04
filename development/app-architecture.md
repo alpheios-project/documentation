@@ -118,41 +118,152 @@ return an error message to the caller.
 
 ## UI Controller
 
-UI Controller is responsible for managing all interactions with the user. It outputs all visual information to
+UI Controller is responsible for managing all interactions with the user. It outputs visual information to
 the user and listens to user inputs.
 
 ### UI Controller Architecture
 
 UI Controller structure is modular to accommodate requirements of different applications that will use it.
 All modules in a controller are pluggable. It means that UI Controller should be able to function with
-any number of modules, or, if necessary, without any (although this scenario is probably not very likely).
-Because of this, UI Controller should properly handle situations when not all modules are present.
+an arbitrary number of modules, or, if necessary, without any modules at all (although this scenario would probably 
+not make much sense). Because of this, UI Controller should properly handle situations when not all modules are present.
 
 UI Controller consists of the following parts:
 
-* **Business methods**. These are methods of a UI Controller that implement business logic. They exist in
-any configuration of a UI Controller. If a configuration of a UI controller does not use some methods, it
-simply does not call them.
+* **Modules**. Module are independent object entities that perform certain roles. All modules
+communicate via a Vuex store. There are two types of modules: **UI Modules** and **Data Modules**.
 
-* **View Controller**. This component is responsible for displaying data to users. Currently, it uses Vue.js
-components, but it could use any other technology as well. View Controller modules (in the current architecture)
- are:
-
-    * **State data**. Contains data that is required for Vue components so that they can present data for 
-    the user. Implemented as a Vuex store.
-    * **Vue components** (panel, popup). They display data to the user and listens to user interactions.
-
-* **Vue components** display data to the user and listens to user interactions.
+* **Vuex Store**. This is a common bus for passing data between UI controller and registered modules.
 
 * **User Input Event listeners**. UI Controller might subscribes to get information about events it's interested in.
 Those could be user interactions with the page (i.e. mouse double click) that are not handled by
-Vue components. Depending on configuration, UI Controller can have zero to multiple event listeners.
+Vue components. Depending on configuration, UI Controller can have several event listeners, or no event
+listeners at all.
 
 UI Controller follows a business component lifecycle phases.
 
 ![UI Controller component architecture](app-architecture/ui-controller-components.svg)
 
-### Interaction with Queries
+### Modules
+
+Modules serve as containers for presentational logic (UI modules) or as adapters for business logic
+libraries (data modules). As UI modules use Vue.js components and Vuex serves as an inter-component
+communication bus, all modules are dependent on a stack of technologies of Vue.js.
+
+Vue.js is a great framework that provides an easy way to create powerful UI objects. A use of Vue.js
+greatly reduces amount of manual work that has to be applied to make feature-rich UI components.
+On the other hand, a strong dependency on a third-party library introduces risks. If the library be
+abandoned, the whole UI part will need to be redone. 
+
+To minimize such risks, we should keep an amount of Vue.js dependent code (i.e. all the code that is 
+implemented within modules) to the minimum. Such code should be limited to presentational logic only.
+All business logic should be contained within business logic libraries (such as L10n or Inflections)
+and not within modules. Modules should stay as lightweight as possible. That will minimize an amount
+of work that will be required in case we will need to move our UI components to some other UI framework.
+
+#### UI Modules
+
+UI modules display visual components, listen to user interactions, and redraw themselves when data that
+they display is updated. UI modules request data from data modules. UI Modules communicate with other 
+UI modules or with data modules using Vuex store's getters, actions, or methods that are installed
+on the components globally.
+
+#### Data Modules
+
+Data modules are adapters that make business logic libraries (such as L10n, Inflections, and others) available
+to the UI modules. Because Vuex serves as a communication bus between all modules, the role of data modules
+is to expose methods and data of business logic libraries to the Vuex store so that UI modules could access it.
+
+Data modules are just wrappers around business logic libraries. Data modules should have no business logic inside them.
+Their purpose is just to translate requests from other modules to corresponding methods of business logic 
+libraries and updated data when those requests are processed.
+
+If there is a need to provide some business functionality that data modules do not have, such functionality
+should be implemented within a business logic library, not within its data module. Data modules should stay
+being a wrapper around all business logic methods of libraries be nothing more than that.
+
+In an architecture like this data modules should be very lightweight.
+
+#### Inter-module communication
+
+All modules communicate between themselves using a common Vuex store that is created by a UI controller.
+Vuex provides a variety of ways to communicate between components. Those includes store properties, getters,
+mutations, and actions. Vue.js mixins and plugins can provide additional ways to install data properties
+and methods on components.
+
+Many different ways of communication provide great flexibility. It is, however, can be a source of confusion, too.
+If we want to reduce complexity, we should set conventions that will limit inter-component communication to
+certain ways only. Probably the best choice could be Vuex getters and actions, along with optional global
+methods installed by plugins. The optimal choice of communication methods depends on application architecture
+and its needs and is often a subject of opinionated choice. That's why it's good to provide some thoughts on
+reasons behind the choice being made above. 
+
+Here is a review of different communication methods with their pros and cons:
+* **Direct state props access** [PROBABLY NOT RECOMMENDED]: This is an easiest way to access data from the store, but
+it presents maintainability problems. Once a prop is removed or its format is changed, it will require a change
+of all components that use this prop. The better way to get access to the data is with getters.
+* **Store getters** [**PROBABLY RECOMMENDED**]: Not as easy to implement as direct props access, getters, on the
+other hand, provide a level of isolation between props and their consumers. If prop is changed, 
+we can update its getter to return data in a format that is still compatible with all its existing consumers. 
+This allows to prevent changes of all consumers upon prop removal or its format change that otherwise 
+would be necessary. The use of getters also simplifies tracking of who uses data and in what ways as getters 
+can be monitored easily. This is a great advantage in complex applications.
+* **Store mutations** [PROBABLY NOT RECOMMENDED]: Store mutations are used to save data to the store. They 
+isolate properties from data consumers, but, unfortunately, they do not allow addition of any logic related 
+to the update. They also do not support asynchronous updates. The better way to propagate updates are actions.
+* **Actions** [**PROBABLY RECOMMENDED**]: actions are similar to mutations, but they are asynchronous. They also allow
+creation of some logic related to data updates that will run before or after data updates. That makes them 
+more flexible than mutations, at the price of insignificant complexity increase.
+* **Mixins** [PROBABLY NOT RECOMMENDED]: mixins allow to install additional props and methods to the components. The
+problem with mixins, however, is that they require component level code to be installed. That contradicts with
+our goals of adding modules transparently, in some automated way. Also, an aggressive use of mixins makes code 
+less maintainable as props and methods added by mixins are hard to track across the code. Arguably, 
+a use of mixins is a doubtful design decision.
+* **Plugins** [**PROBABLY RECOMMENDED, IN SOME SITUATIONS**]; plugins allow to install props and functions 
+on components globally. A difference with mixins is that while mixins allow to install props on components 
+selectively, plugins install functions to all Vue.js components available in the app. The use of plugins 
+is handy and justified when we need to provide global presence of methods, such as in situations when a 
+method will be used by all, or almost all, Vue components (i.e. L10n methods). To avoid naming collisions and
+to provide a clear way to identify a module that installs methods, method names should be prefixed with
+module names.
+
+#### Namespacing
+
+All modules are namespaced. Each module has its name, and all its props, getters, mutations, and actions, when
+inserted into the global Vuex store, prefixed with the module name. Global methods installed by plugins are
+prefixed with a module name is well, as a convention. That allows:
+1. Avoid accidental collisions between props or functions from different modules.
+2. Provide understanding of which module provides a certain method.
+
+An example of a prefixed action is `l10n/setLocale` (the module name being `l10n` here and `setLocale` being
+an action name). This prefixing is done automatically by Vue.js once store module is declared as namespaced.
+
+An example of a prefixed global method installed by a plugin is `$l10nSetLocale`. The module name here is `l10n`
+and the method itself is `setLocale`. The `$` prefix designates a method as being global, according to Vue.js
+naming convention.
+
+#### Module registration
+
+In order to become usable and available to other modules, each module has to be registered with a UI controller.
+UI controller provides a special method for that. Once registered, a module will be instantiated with its object
+constructor and then integrated into a shared Vuex store that is maintained by a UI controller. At this moment
+a module becomes available to other modules.
+
+Because Vuex modules support dynamic registration, each module can be registered and un-registered dynamically.
+This functionality is not implemented at the moment, however, because there is no use cases for it yet.
+
+#### Module dependencies
+
+Modules can be dependent on each other. For example, a UI component may need an L10n module to get access to
+translated strings. In such cases a UI component will be unfunctionable if L10n module is not available.
+
+To prevent situations like that, there is a dependency checking mechanism that can be built into components. 
+Each component or module knows its dependencies. Once such component is created, it checks if its dependencies 
+are satisfied or not. In the latter case a component will report an error that will list all required modules 
+that are missing. This serves as a safety net in preventing component malfunction if not all modules it 
+depends upon are there.
+
+### How a UI controller interacts with Queries
 
 UI Controller uses queries to retrieve lexical and other information from remote sources. 
 
