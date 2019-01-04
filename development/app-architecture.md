@@ -202,28 +202,36 @@ Here is a review of different communication methods with their pros and cons:
 * **Direct state props access** ([documentation](https://vuex.vuejs.org/guide/state.html)) [PROBABLY NOT RECOMMENDED]: This is an easiest way to access data from the store, but
 it presents maintainability problems. Once a prop is removed or its format is changed, it will require a change
 of all components that use this prop. The better way to get access to the data is with getters.
-* **Store getters** ([documentation](https://vuex.vuejs.org/guide/getters.html)) [**PROBABLY RECOMMENDED**]: Not as easy to implement as direct props access, getters, on the
+* **Store getters** ([documentation](https://vuex.vuejs.org/guide/getters.html)) [**PROBABLY RECOMMENDED**]: 
+Not as easy to implement as direct props access, getters, on the
 other hand, provide a level of isolation between props and their consumers. If prop is changed, 
 we can update its getter to return data in a format that is still compatible with all its existing consumers. 
 This allows to prevent changes of all consumers upon prop removal or its format change that otherwise 
 would be necessary. The use of getters also simplifies tracking of who uses data and in what ways as getters 
 can be monitored easily. This is a great advantage in complex applications.
-* **Store mutations** ([documentation](https://vuex.vuejs.org/guide/mutations.html)) [PROBABLY NOT RECOMMENDED]: Store mutations are used to save data to the store. They 
+* **Store mutations** ([documentation](https://vuex.vuejs.org/guide/mutations.html)) [PROBABLY NOT RECOMMENDED]: 
+Store mutations are used to save data to the store. They 
 isolate properties from data consumers, but, unfortunately, they do not allow addition of any logic related 
 to the update. They also do not support asynchronous updates. The better way to propagate updates are actions.
-* **Actions** ([documentation](https://vuex.vuejs.org/guide/actions.html)) [**PROBABLY RECOMMENDED**]: actions are similar to mutations, but they are asynchronous. They also allow
+* **Actions** ([documentation](https://vuex.vuejs.org/guide/actions.html)) [**PROBABLY RECOMMENDED**]: 
+actions are similar to mutations, but they are asynchronous. They also allow
 creation of some logic related to data updates that will run before or after data updates. That makes them 
 more flexible than mutations, at the price of insignificant complexity increase.
-* **Mixins** ([documentation](https://vuejs.org/v2/guide/mixins.html)) [PROBABLY NOT RECOMMENDED]: mixins allow to install additional props and methods to the components. The
+* **Mixins** ([documentation](https://vuejs.org/v2/guide/mixins.html)) [PROBABLY NOT RECOMMENDED]: mixins allow 
+to install additional props and methods to the components. The
 problem with mixins, however, is that they require component level code to be installed. That contradicts with
-our goals of adding modules transparently, in some automated way. Also, an aggressive use of mixins makes code 
-less maintainable as props and methods added by mixins are hard to track across the code. Arguably, 
-a use of mixins is a doubtful design decision.
-* **Plugins** ([documentation](https://vuejs.org/v2/guide/plugins.html)) [**PROBABLY RECOMMENDED, IN SOME SITUATIONS**]; plugins allow to install props and functions 
-on components globally. A difference with mixins is that while mixins allow to install props on components 
-selectively, plugins install functions to all Vue.js components available in the app. The use of plugins 
+our goals of adding modules transparently to the component, in some automated way. Also, an aggressive use of mixins makes code 
+less maintainable as props and methods added by mixins are hard to track across the code. Mixins can be
+especially dangerous because of its merge feature that is especially tricky to follow. It can change 
+(especially with global mixins) how components behave in some ways that can be hard to predict, 
+especially in complex applications. These are the reasons why use of mixins is not recommended.
+* **Plugins** ([documentation](https://vuejs.org/v2/guide/plugins.html)) [**PROBABLY RECOMMENDED, IN SOME SITUATIONS**]: 
+plugins allow to install props and instance methods on components globally. A difference with mixins is 
+that while mixins allow to install props and methods either on selected components of globally (not recommended!), 
+plugins install functions to all Vue.js components available within the app. The use of plugins 
 is handy and justified when we need to provide global presence of methods, such as in situations when a 
-method will be used by all, or almost all, Vue components (i.e. L10n methods). To avoid naming collisions and
+method will be used by all, or almost all, Vue components (i.e. L10n methods). This simplifies development as
+every component will have the same instance methods available to it. To avoid naming collisions and
 to provide a clear way to identify a module that installs methods, method names should be prefixed with
 module names.
 
