@@ -186,7 +186,16 @@ In an architecture like this data modules should be very lightweight.
 
 #### Inter-module communication
 
-All modules communicate between themselves using a common Vuex store that is created by a UI controller.
+![Public and Private Interfaces of a Module](app-architecture/module-interface.svg)
+
+Data and UI modules exposes two interfaces that are used for inter-module communications: Vuex store
+module (exposes data and method to manipulate this data) and a module's public API (exposes general-purpose methods). 
+Vuex module is integrated into the common Vuex store that is owned
+by a UI controller. Module's public API is integrated into a shared `api` object of a UI controller.
+Both Vuex store and an `api` object can be shared with any module or any UI component (i.e a Vue component). 
+
+##### Vuex store module interface
+
 Vuex provides a variety of ways to communicate between components. Those includes store properties, getters,
 mutations, and actions. Vue.js mixins and plugins can provide additional ways to install data properties
 and methods on components.
@@ -199,25 +208,26 @@ and its needs and is often a subject of opinionated choice. That's why it's good
 reasons behind the choice being made above. 
 
 Here is a review of different communication methods with their pros and cons:
-* **Direct state props access** ([documentation](https://vuex.vuejs.org/guide/state.html)) [PROBABLY NOT RECOMMENDED]: This is an easiest way to access data from the store, but
-it presents maintainability problems. Once a prop is removed or its format is changed, it will require a change
-of all components that use this prop. The better way to get access to the data is with getters.
-* **Store getters** ([documentation](https://vuex.vuejs.org/guide/getters.html)) [**PROBABLY RECOMMENDED**]: 
+* **Direct state props access** ([documentation](https://vuex.vuejs.org/guide/state.html)): 
+This is an easiest way to access data from the store, but it may present maintainability problems in some scenarios. 
+Once a prop is removed or its format is changed, it will require a change
+in all components that use this prop. In order to prevent this a prop can be masked with getters.
+* **Store getters** ([documentation](https://vuex.vuejs.org/guide/getters.html)): 
 Not as easy to implement as direct props access, getters, on the
 other hand, provide a level of isolation between props and their consumers. If prop is changed, 
 we can update its getter to return data in a format that is still compatible with all its existing consumers. 
 This allows to prevent changes of all consumers upon prop removal or its format change that otherwise 
 would be necessary. The use of getters also simplifies tracking of who uses data and in what ways as getters 
 can be monitored easily. This is a great advantage in complex applications.
-* **Store mutations** ([documentation](https://vuex.vuejs.org/guide/mutations.html)) [PROBABLY NOT RECOMMENDED]: 
+* **Store mutations** ([documentation](https://vuex.vuejs.org/guide/mutations.html)): 
 Store mutations are used to save data to the store. They 
 isolate properties from data consumers, but, unfortunately, they do not allow addition of any logic related 
-to the update. They also do not support asynchronous updates. The better way to propagate updates are actions.
-* **Actions** ([documentation](https://vuex.vuejs.org/guide/actions.html)) [**PROBABLY RECOMMENDED**]: 
+to the update. They also do not support asynchronous updates. The more universal way to propagate updates are actions.
+* **Actions** ([documentation](https://vuex.vuejs.org/guide/actions.html)): 
 actions are similar to mutations, but they are asynchronous. They also allow
 creation of some logic related to data updates that will run before or after data updates. That makes them 
 more flexible than mutations, at the price of insignificant complexity increase.
-* **Mixins** ([documentation](https://vuejs.org/v2/guide/mixins.html)) [PROBABLY NOT RECOMMENDED]: mixins allow 
+* **Mixins** ([documentation](https://vuejs.org/v2/guide/mixins.html)): mixins allow 
 to install additional props and methods to the components. The
 problem with mixins, however, is that they require component level code to be installed. That contradicts with
 our goals of adding modules transparently to the component, in some automated way. Also, an aggressive use of mixins makes code 
@@ -225,7 +235,7 @@ less maintainable as props and methods added by mixins are hard to track across 
 especially dangerous because of its merge feature that is especially tricky to follow. It can change 
 (especially with global mixins) how components behave in some ways that can be hard to predict, 
 especially in complex applications. These are the reasons why use of mixins is not recommended.
-* **Plugins** ([documentation](https://vuejs.org/v2/guide/plugins.html)) [**PROBABLY RECOMMENDED, IN SOME SITUATIONS**]: 
+* **Plugins** ([documentation](https://vuejs.org/v2/guide/plugins.html)): 
 plugins allow to install props and instance methods on components globally. A difference with mixins is 
 that while mixins allow to install props and methods either on selected components of globally (not recommended!), 
 plugins install functions to all Vue.js components available within the app. The use of plugins 
@@ -233,7 +243,14 @@ is handy and justified when we need to provide global presence of methods, such 
 method will be used by all, or almost all, Vue components (i.e. L10n methods). This simplifies development as
 every component will have the same instance methods available to it. To avoid naming collisions and
 to provide a clear way to identify a module that installs methods, method names should be prefixed with
-module names.
+module names. However, public API methods is probably a more controlled way to expose methods to UI components
+and other JS objects.
+
+##### Module's public API
+
+Module's public API is a set of methods of a module that are publicly exposed to other modules or UI components.
+It is integrated into a Vue instance with a `provide` option. In order to be accessed in a UI component
+a component has to claim its use with `inject`.
 
 #### Namespacing
 
@@ -271,6 +288,15 @@ Each component or module knows its dependencies. Once such component is created,
 are satisfied or not. In the latter case a component will report an error that will list all required modules 
 that are missing. This serves as a safety net in preventing component malfunction if not all modules it 
 depends upon are there.
+
+#### Vuex store module and public API usage
+
+|   | Vuex store module  | Public API module  |
+|---|---|---|
+| Use from a UI component: | this.$store.state.moduleName.propName  | this.moduleName.methodName()  |
+| Use from a root Vue instance:  | this.$options.store.state.moduleName.propName  | this.$options.api.moduleName.methodName()  |
+| Use from any JS object:  | uiController.store.state.moduleName.propName  | uiController.api.moduleName.methodName()  |
+| Claim as a dependency in a UI component:  | storeModules["moduleName"] or nothing  | inject["moduleName"]  |
 
 ### How a UI controller interacts with Queries
 
