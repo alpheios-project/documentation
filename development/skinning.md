@@ -1,5 +1,24 @@
 # Apply skinning to the Alpheios Tools
 
+All branding could be changed using various variables.
+You should define your values of variables and apply them to the `:root` tag.
+For example this way:
+```
+:root {
+    --alpheios-toolbar-bg-color: #008484;
+    --alpheios-border-color: #dedede;
+    --alpheios-desktop-popup-progress-bar-line: #405480;
+
+    --alpheios-icon-color: #BCE5F0;
+    --alpheios-icon-color-hover: #fce45c;
+    --alpheios-icon-color-active: #fce45c;
+    --alpheios-icon-color-disabled: #dedede;
+    --alpheios-settings-font-size-dark-color: #337ab7;
+    --alpheios-settings-font-multiselect-bg: #337ab7;
+}
+
+```
+
 There are several variables that allow to change colors for the Alpheios Tools:
 
 Variable name | Default | Description
@@ -84,10 +103,11 @@ Variable name | Default | Description
  `--alpheios-desktop-panel-icon-color-active` | `--alpheios-icon-color-active` |  Panel header icons color - active state
  `--alpheios-desktop-panel-icon-bg-active` | `--alpheios-toolbar-bg-color` |  Panel header icons background color - active state
  `--alpheios-desktop-panel-icon-color-disabled` | `--alpheios-icon-color-disabled` |   Panel header icons background color - disabled state
- Panel (Desktop) |  | 
+ Panel (Compact) |  | 
  `--alpheios-compact-panel-content-bg` | `--alpheios-text-bg-color` | Panel content background color
  | | 
  `--alpheios-compact-panel-icon-color` | `--alpheios-icon-color` | Panel header icons color
+ `--alpheios-compact-panel-icon-bg` | `--alpheios-toolbar-bg-color` |  Panel header icons background color
  `--alpheios-compact-panel-icon-color-hover` | `--alpheios-icon-color-hover` | Panel header icons color - hover state
  `--alpheios-compact-panel-icon-bg-hover` | `--alpheios-toolbar-bg-color` | Panel header icons background color - hover state
  `--alpheios-compact-panel-icon-color-active` | `--alpheios-icon-color-active` | Panel header icons color - active state
