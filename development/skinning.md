@@ -104,6 +104,7 @@ Variable name | Default | Description
  `--alpheios-desktop-panel-icon-bg-active` | `--alpheios-toolbar-bg-color` |  Panel header icons background color - active state
  `--alpheios-desktop-panel-icon-color-disabled` | `--alpheios-icon-color-disabled` |   Panel header icons background color - disabled state
  Panel (Compact) |  | 
+ `--alpheios-compact-panel-header-bg` | `--alpheios-toolbar-bg-color` | Panel header background color
  `--alpheios-compact-panel-content-bg` | `--alpheios-text-bg-color` | Panel content background color
  | | 
  `--alpheios-compact-panel-icon-color` | `--alpheios-icon-color` | Panel header icons color
