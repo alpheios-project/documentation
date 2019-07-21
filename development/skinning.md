@@ -30,7 +30,6 @@ Variable name | Default | Description
 `--alpheios-icon-color-hover` | #FFD27D | State color for icon color - hover
 `--alpheios-icon-color-active` | #FFC24F | State color for icon color - active, pressed
 `--alpheios-icon-color-disabled` | #757575 | State color for icon color - disabled
-`--alpheios-icon-color-disabled` | #757575 | State color for icon color - disabled
  |  | 
 `--alpheios-link-color` | #185F6D | Link color - used in popup (for example for grammar links)
 `--alpheios-link-color-hover` | #124D59 | Link color - used in popup (for examp[le for grammar links) - hover state
@@ -123,14 +122,14 @@ Variable name | Default | Description
  `--alpheios-lookup-button-bg-hover` | `--alpheios-btn-primary-bg-color-hover` | Lookup main button - background color - hover state
  `--alpheios-lookup-button-border-color-hover` | `--alpheios-btn-primary-border-color-hover` | Lookup main button - border color - hover state
  Inflections Browser |  | 
- `--alpheios-inflect-browser-title-color` | `--alpheios-link-color-on-light` | Inflections Browser - main title - font color
+ `--alpheios-inflect-title-color` | `--alpheios-link-color-on-light` | Inflections Browser - main title - font color
  `--alpheios-inflect-button-control-color` | `--alpheios-btn-secondary-font-color` | Inflections Browser - expand/collapse button - font color
  `--alpheios-inflect-button-control-bg` | `--alpheios-btn-secondary-bg-color` | Inflections Browser - expand/collapse button - background color
  `--alpheios-inflect-button-control-border-color` | `--alpheios-btn-secondary-border-color`  | Inflections Browser - expand/collapse button - border color
  `--alpheios-inflect-button-control-color-hover` | `--alpheios-btn-secondary-font-color-hover`  | Inflections Browser - expand/collapse button - font color - hover state
  `--alpheios-inflect-button-control-bg-hover` | `--alpheios-btn-secondary-bg-color-hover`  | Inflections Browser - expand/collapse button - background color - hover state
  `--alpheios-inflect-button-control-border-color-hover` | `--alpheios-btn-secondary-border-color-hover`  | Inflections Browser - expand/collapse button - border color - hover state
- `--alpheios-inflect-match-cell-border-color` | `--alpheios-highlight-border-color` | Inflections Browser - border color for cells that has match
+ `--alpheios-inflect-morph-match-cell-border-color` | `--alpheios-highlight-border-color` | Inflections Browser - border color for cells that has match
  `--alpheios-inflect-match-suff-bg` | `--alpheios-highlight-light-color`  | Inflections Browser - background color for matched suffix
  `--alpheios-inflect-match-suff-color` | `--alpheios-text-color`  | Inflections Browser - font color for matched suffix
  `--alpheios-inflect-full-match-suff-bg` | `--alpheios-highlight-color` | Inflections Browser - background color for full matched suffix
