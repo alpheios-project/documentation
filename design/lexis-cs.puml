@@ -1,0 +1,20 @@
+@startuml
+title A sequence diagram for interaction between ClientAdapters and client-side lexical services aka LexisCS
+box "Application" #LightGreen
+participant ClientAdapter
+boundary "Messaging Service" as AMS
+end box
+box "service iframe" #LightBlue
+boundary "Messaging Service" as IMS
+entity "CEDICT Data Object" as CDO
+database "CEDICT Data" as CData
+end box
+ClientAdapter -> AMS: getWords request
+AMS -> IMS: getWords RequestMessage
+IMS -> CDO: getWords() function call
+CDO -> CData: words lookup query
+CData --> CDO: a list of words found
+CDO --> IMS: getWords() returns results
+IMS --> AMS: getWords ResponseMessage
+AMS --> ClientAdapter: getWords request
+@enduml
