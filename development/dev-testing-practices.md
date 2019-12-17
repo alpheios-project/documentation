@@ -21,7 +21,8 @@
 5. service clients
 6. microservices 
 7. lambda functions
-8. packaged applications
-9. infrastructure/deployment code 
+8. application packages
+9. library packages
+10. infrastructure/deployment code 
 
 
