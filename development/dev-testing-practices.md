@@ -22,7 +22,13 @@
 6. microservices 
 7. lambda functions
 8. application packages
-9. library packages
-10. infrastructure/deployment code 
+9. infrastructure/deployment code 
 
+### Practices
 
+1. All codebases should use linters to enforce coding standards
+2. All codebases should include unit tests which cover the unique functionality of the underlying code without any package dependencies
+3. Unit tests should run with every push to GitHub
+4. All codebases should include integration tests which cover the behavior of the underlying code with package dependencies 
+5. Integration and Unit tests should avoid dependencies on any production micro services 
+6. Application pages should include end-to-end tests which may have dependencies on production microservices
