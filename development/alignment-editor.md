@@ -54,7 +54,7 @@ It does not contain any information about how the text should be formatted for d
 
 The Alpheios.net site currently demonstrates two different types of displays using data from the Alignment Editor
 
-1. Enhanced Text Displays driven by TEI documents which had the Alignment Editor XML output merged back into the source TEI 
+'1. Enhanced Text Displays driven by TEI documents which had the Alignment Editor XML output merged back into the source TEI 
 as attributes on word elements in the source TEI. These merged TEI documents were then transformed to HTML with alignment data contained
 in attributes on HTML `span` elements containt the aligned words. 
 
@@ -91,7 +91,15 @@ The package itself has not been tested on any version of eXist later than 2.2.
 
 ### User Alignments From Within Alpheios
 
-The ability for a user of the Apheios Reading Tools to create alignments of texts they are reading directly from within the website they are viewing. Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   The alignment interface should allow users to specify where the linebreaks should occur while aligning. Users would be able to create multiple alignments of the same section of text, in multiple languages and choose from among them when exporting their data/display. For an exported display containing multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once.  Size of alignments allowed might need to be limited to a max number of words for performance or other reasons.
+Features:
+
+* The ability for a user of the Apheios Reading Tools to create alignments of texts they are reading directly from within the website they are viewing. 
+    * a companion site using the Alpheios Embedded Library could be used for people to "try-out" alignments of pasted source and translation text, without the ability to save or reaccess the alignment from within that interface, although they would be able to export it.  Something similar to e.g. https://jsonformatter.org/json-pretty-print
+* Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. 
+* Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   
+* The alignment interface should allow users to specify where the linebreaks should occur while aligning. Users would be able to create multiple alignments of the same section of text, in multiple languages and choose from among them when exporting their data/display. 
+* For an exported display containing multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once.  
+* Size of alignments allowed might need to be limited to a max number of words for performance or other reasons.  
 
 
 
