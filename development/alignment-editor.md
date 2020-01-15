@@ -94,6 +94,7 @@ The package itself has not been tested on any version of eXist later than 2.2.
 Features:
 
 * The ability for a user of the Apheios Reading Tools to create alignments of texts they are reading directly from within the website they are viewing. 
+    * this should preserve the essentially simultaneous response of the highlighting in the opposite pane when a word is selected
     * a companion site using the Alpheios Embedded Library could be used for people to "try-out" alignments of pasted source and translation text, without the ability to save or reaccess the alignment from within that interface, although they would be able to export it.  Something similar to e.g. https://jsonformatter.org/json-pretty-print
 * Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. 
 * Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   
