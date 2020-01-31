@@ -99,9 +99,11 @@ The Event Listener of the Messaging service on the Client parent window receives
 
 ## Lexis-CS Phase 2 (new services)
 
-*With Treebank Service
+*With Treebank Service*
 
 ![Lexis CS Phase 2 (Treebank Service)](../development/data-services/lexis_cs_2.png)
+
+(https://go.gliffy.com/go/share/s7p3ckwkabxlf1tlsni8)
 
 ### Client Side Instantiation
 
