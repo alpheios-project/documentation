@@ -93,9 +93,43 @@ The Event Listener of the Messaging Service on the IFrame Window receives the me
 
 The Cedict Service responds to the message by retrieving data from either the LocalIndexedDb(M-3c) or Volatile Storage (M-3d)
 
-The Cedict Service calls a  message of the Messaging Service to post a message to the Client parent window (M-4a)
+The Cedict Service calls a method of the Messaging Service to post a message to the Client parent window (M-4a)
 
 The Event Listener of the Messaging service on the Client parent window receives the message and executes the message callback of the Chinese Adapter (M-4b)
+
+## Lexis-CS Phase 2 (new services)
+
+*With Treebank Service
+
+![Lexis CS Phase 2 (Treebank Service)](../development/data-services/lexis_cs_2.png)
+
+### Client Side Instantiation
+
+The Treebank Component adds an IFrame to the page (domains will vary dependending upon document). (C-4)
+
+The Treebank Adapter instantiates a Messaging Service with a Treebank Destination (C-5)
+
+The Messaging Service adds an Event Listener to the Window to listen to messages from the Treebank Service (C-6)
+
+### Service Side Instantiation
+
+The Treebank Service in the React App in the IFrame adds an Event Listener to the Document (S-5)
+
+The Event Listener instantiates a Messaging Service with a Treebank Destination (S-6)
+
+The Messaging Service adds an Event Listener to the Window to listen to messages from the Client (S-7
+
+### Messages
+
+The Treebank Adapter (Client) calls a method of the Messaging Service to post a message to the IFrame (M-5a)
+
+The Event Listener of the Messaging Service on the IFrame Window receives the message and sends it to the Treebank Service (M-5b)
+
+The Treebank Service calls the Arethusa API (M-5c) which retrieves data from GitHub (M-5d)
+
+The Treebank Service initiates the response by calling a method of the Messaging Service to post a message to the Client parent window (M-6a)
+
+The Event Listener of the Messaging service on the Client parent window receives the message and executes the message callback of the Treebank Adapter (M-6b)
 
 
 ## Index File Sizes
