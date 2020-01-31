@@ -87,15 +87,15 @@ The Cedict Service Retrieves data from the Remote DB/FS and populates either Vol
 
 ### Messages
 
-The Chinese Adapter (Client) posts a message to the IFrame (M-3a)
+The Chinese Adapter (Client) calls a method of the Messaging Service to post a message to the IFrame (M-3a)
 
-The Event Listener on the IFrame Window receives the message and sends it to the Cedict Service (M-3b)
+The Event Listener of the Messaging Service on the IFrame Window receives the message and sends it to the Cedict Service (M-3b)
 
 The Cedict Service responds to the message by retrieving data from either the LocalIndexedDb(M-3c) or Volatile Storage (M-3d)
 
-The Cedict Service posts a message to the Client parent window (M-4a)
+The Cedict Service calls a  message of the Messaging Service to post a message to the Client parent window (M-4a)
 
-The Event Listener on the Client parent window receives the message and sends it to the message Destination in the Chinese Adapter (M-4b)
+The Event Listener of the Messaging service on the Client parent window receives the message and executes the message callback of the Chinese Adapter (M-4b)
 
 
 ## Index File Sizes
