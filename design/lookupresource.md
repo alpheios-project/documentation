@@ -71,7 +71,7 @@ All requests that leave the browser may instead be fulfilled by the Browser Cach
 
 The Lexis Data Module adds an IFrame with source lexis.alpheios.net to the page. (C-1)
 
-The Chinese Adapter instantiates a Messaging Service with a CEDICT Destination (C-2)
+The Chinese Adapter instantiates a Messaging Service with a WindowIFrameDestination configured for CEDICT (C-2)
 
 The Messaging Service adds an Event Listener to the Window to listen to messages from the Service (C-3)
 
@@ -79,7 +79,7 @@ The Messaging Service adds an Event Listener to the Window to listen to messages
 
 The Cedict Service in the HTML of the IFrame adds an Event Listener to the Document (S-1)
 
-The Event Listener instantiates a Messaging Service with a CEDICT Destination (S-2)
+The Event Listener instantiates a Messaging Service with a WindowIFrameDestination configured for CEDICT (S-2)
 
 The Messaging Service adds an Event Listener to the Window to listen to messages from the Client (S-3)
 
