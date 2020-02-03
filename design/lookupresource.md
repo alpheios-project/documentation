@@ -133,6 +133,9 @@ The Treebank Service initiates the response by calling a method of the Messaging
 
 The Event Listener of the Messaging service on the Client parent window receives the message and executes the message callback of the Treebank Adapter (M-6b)
 
+## Messaging Class Diagram
+
+https://go.gliffy.com/go/share/skuhbvkol5eutu6769yf
 
 ## Index File Sizes
 
