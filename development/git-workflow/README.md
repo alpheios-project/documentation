@@ -19,6 +19,7 @@ Each merge into `production` increases a version number in `package.json`. The v
 * 1.2.3 + minor + patch -> 1.3.0 (minor feature masks patch)
 * 1.2.3 + major + minor -> 2.0.0 (major feature masks minor)
 * 1.2.3 + minor + minor -> 1.3.0 (two minor features are counted as one)
+
 This is an algorithm that is implemented in tools that support conventional commits, including Lerna's version, and it would makes sense for us to follow it too.
 
 If no merges to `production` are made, the version is not increases, no matter what changes were made. We can use conventional commits selectively (i.e. not every commit is a conventional one but only those which commit messages convey information about what feature was added) to store data about features added. This info is stored in git history and then we can use tools like Lerna version to set a version number using that information. We also could not use conventional commits at all and set version manually when code is merged from `qa` to `production`.
