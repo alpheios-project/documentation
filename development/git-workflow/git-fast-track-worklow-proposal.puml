@@ -8,46 +8,58 @@ participant "qa\n" as qa
 participant "ftqa\n (fast-track QA)" as ftqa
 participant "production\n" as prod
 
+activate mst
+activate prod
+
 note over mst #FFAAAA: v1.2.3
 mst -> f1: Start a development of feature A
+activate f1
 note over f1 #FFAAAA: v1.2.3
 f1 -> f1: Develop a new feature
 mst -> f2: Start a development of feature B
+activate f2
 note over f2 #FFAAAA: v1.2.3
 f1 --> f1: Dev test
 f2 -> f2: Develop a new feature
 f1 -> f1: Fix issues
 mst -> f1: Merge upstream changes (if any)
 f1 -> mst: Feature A dev is complete (minor)
+deactivate f1
 note over mst #FFAAAA: v1.2.3
 
 f2 --> f2: Dev test
 f2 -> f2: Fix issues
 mst -> f2: Merge upstream changes (if any)
 f2 -> mst: Feature B dev is complete (patch)
+deactivate f2
 note over mst #FFAAAA: v1.2.3
 
 mst -> qa: Add a set of changes to QA
+activate qa
 note over qa #FFAAAA: v1.2.3
 note over qa #LightSteelBlue: tag: qa.200228345
 qa --> qa: Testing
 qa -> qa: Bugs fixing
 
 mst -> f3: Start a development of a fast-track feature C
+activate f3
 note over f3 #FFAAAA: v1.2.3
 f3 -> f3: Develop a new feature
 f3 --> f3: Dev test
 f3 -> f3: Fix issues
 f3 -> mst: Fast-track feature C dev is complete (major)
-
 f3 -> ftqa: Add a new set of fast-track changes to QA
+deactivate f3
+
+activate ftqa
 note over ftqa #FFAAAA: v1.2.3
-note over ftqa #LightSteelBlue: tag: fta.200228444
+note over ftqa #LightSteelBlue: tag: ftqa.200228444
 ftqa --> ftqa: Testing
 ftqa -> ftqa: Bug fixing
 note over ftqa #LightSteelBlue: tag: ftqa.200228497
 ftqa --> ftqa: Testing
 ftqa -> prod: Changes approved
+deactivate ftqa
 note over prod #GreenYellow: v2.0.0
 note over prod #LightSteelBlue: tag: v2.0.0
 note over prod #White: RC deployment
@@ -60,6 +72,7 @@ note over qa #LightSteelBlue: tag: qa.200228561
 
 qa --> qa: Testing
 qa -> prod: Changes approved
+deactivate qa
 note over prod #GreenYellow: v2.1.0
 note over prod #LightSteelBlue: tag: v2.1.0
 note over prod #Thistle: Prod deployment

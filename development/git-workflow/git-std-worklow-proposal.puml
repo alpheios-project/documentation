@@ -7,26 +7,34 @@ participant "feature-c\n (patch feature)" as f3
 participant "qa\n" as qa
 participant "production\n" as prod
 
+activate mst
+activate prod
+
 note over mst #FFAAAA: v1.2.3
 mst -> f1: Start a development of feature A
+activate f1
 note over f1 #FFAAAA: v1.2.3
 f1 -> f1: Develop a new feature
 mst -> f2: Start a development of feature B
+activate f2
 note over f2 #FFAAAA: v1.2.3
 f1 --> f1: Dev test
 f2 -> f2: Develop a new feature
 f1 -> f1: Fix issues
 mst -> f1: Merge upstream changes (if any)
 f1 -> mst: Feature A dev is complete (minor)
+deactivate f1
 note over mst #FFAAAA: v1.2.3
 
 f2 --> f2: Dev test
 f2 -> f2: Fix issues
 mst -> f2: Merge upstream changes (if any)
 f2 -> mst: Feature B dev is complete (patch)
+deactivate f2
 note over mst #FFAAAA: v1.2.3
 
 mst -> qa: Add a set of changes to QA
+activate qa
 note over qa #FFAAAA: v1.2.3
 note over qa #LightSteelBlue: tag: qa.200228345
 qa --> qa: Testing
@@ -34,16 +42,19 @@ qa -> qa: Bug fixing
 note over qa #LightSteelBlue: tag: qa.200228367
 
 mst -> f3: Start a development of feature C
+activate f3
 note over f3 #FFAAAA: v1.2.3
 f3 -> f3: Develop a new feature
 f3 --> f3: Dev test
 f3 -> f3: Fix issues
 mst -> f3: Merge upstream changes (if any)
 f3 -> mst: Feature C dev is complete (patch)
+deactivate f3
 note over mst #FFAAAA: v1.2.3
 
 qa --> qa: Testing
 qa -> prod: Changes approved
+deactivate qa
 note over prod #GreenYellow: v1.3.0
 note over prod #LightSteelBlue: tag: v1.3.0
 note over prod #White: RC deployment
@@ -51,6 +62,7 @@ prod -> mst: Merge fixes back
 note over mst #FFAAAA: v1.3.0
 
 mst -> qa: Add a new set of changes to QA
+activate qa
 note over qa #FFAAAA: v1.3.0
 note over qa #LightSteelBlue: tag: qa.200228455
 qa --> qa: Testing
@@ -58,6 +70,7 @@ qa -> qa: Bug fixing
 note over qa #LightSteelBlue: tag: qa.200228501
 qa --> qa: Testing
 qa -> prod: Changes approved
+deactivate qa
 note over prod #GreenYellow: v1.3.1
 note over prod #LightSteelBlue: tag: v1.3.1
 note over prod #Thistle: Prod deployment
