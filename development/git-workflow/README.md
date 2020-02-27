@@ -4,7 +4,7 @@
 
 This is a workflow that will be used for development of a new feature in majority of cases. Please see details on a diagram below.
 
-![Standard workflow diagram](https://raw.githubusercontent.com/alpheios-project/documentation/master/development/git-workflow/git-std-worklow-proposal.svg?sanitize=true)
+![Standard workflow diagram](https://raw.githubusercontent.com/alpheios-project/documentation/dev-cd/development/git-workflow/git-std-worklow-proposal.svg?sanitize=true)
 
 When a new feature development is started, a separate feature branch is created for it. This branch will contain code of this feature only. Once development of this feature and its dev testing are complete, a feature branch is merged into master. A feature branch can be deleted after the merge.
 
@@ -33,7 +33,7 @@ This workflow is used on special occasions when do have some features in QA test
 
 This workflow is more complex and should be used only when it is absolutely necessary.
 
-![Fast track workflow diagram](https://raw.githubusercontent.com/alpheios-project/documentation/master/development/git-workflow/git-fast-track-worklow-proposal.svg?sanitize=true)
+![Fast track workflow diagram](https://raw.githubusercontent.com/alpheios-project/documentation/dev-cd/development/git-workflow/git-fast-track-worklow-proposal.svg?sanitize=true)
 
 The fast track workflow differs from the regular one in the following:
 * We do not merge changes from master to a fast track feature development branch and we do not merge a fast track branch to master before merging a fast track branch to QA. At that moment `master` may alread contain other new features. We don't want them to be combined with the fast track features. We want to isolate the fast track features so that they will be tested and released on their own.
