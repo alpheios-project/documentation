@@ -37,7 +37,7 @@ This workflow is more complex and should be used only when it is absolutely nece
 ![Fast track workflow diagram](https://raw.githubusercontent.com/alpheios-project/documentation/master/development/git-workflow/git-fast-track-worklow-proposal.svg?sanitize=true)
 
 The fast track workflow differs from the regular one in the following:
-* We do not merge changes from master to a fast track feature development branch and we do not merge a fast track branch to master before merging a fast track branch to QA. At that moment `master` may alread contain other new features. We don't want them to be combined with the fast track features. We want to isolate the fast track features so that they will be tested and released on their own.
+* We do not merge changes from master to a fast track feature development branch and we do not merge a fast track branch to master before merging a fast track branch to QA. At that moment `master` may already contain other new features. We don't want them to be combined with the fast track features. We want to isolate the fast track features so that they will be tested and released on their own.
 * We merge changes from the fast track feature development branch into a special fast track `ftqa` branch, not to the regular `qa` branch. This is to isolate fast track features from the rest.
 * After a fast track QA testing is completed, a `ftqa` branch is merged to `production`. Then in needs to be merged back to the regular `qa` branch. That will add fast track changes to those that are currently in QA. After that a fast-track QA branch is not needed and can be deleted.
 
