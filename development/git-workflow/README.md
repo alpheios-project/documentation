@@ -41,7 +41,15 @@ The fast track workflow differs from the regular one in the following:
 * We merge changes from the fast track feature development branch into a special fast track `ftqa` branch, not to the regular `qa` branch. This is to isolate fast track features from the rest.
 * After a fast track QA testing is completed, a `ftqa` branch is merged to `production`. Then in needs to be merged back to the regular `qa` branch. That will add fast track changes to those that are currently in QA. After that a fast-track QA branch is not needed and can be deleted.
 
-# Version changes
+# Versioning of the code
 
-Certain waypoints of the workflow result in a version update. This may or may not trigger a new code deployment. We will use pre-set scripts to control what and how needs to be deployed. We will use functionalities of Lerna and Travis to implement a version change and a deployment of build artifacts. 
+A version is changed only when code is merged to a `production` branch. This will trigger a code deployment to npm with either the `latest` (in that case code will become available to all Alpheios clients by default) or `rc` tag (then the code will be used only by those who target it specifically). We will use pre-set scripts to control the deployment.
+
+In all other branches we'll use a build number within a tagged commit to designate a specific release, such as different QA builds. To create it, we'll use an npm script that will:
+1. Generate a build number. A build number format in `branch-name.YYYYMMDDCCCC`, where `CCC` is a number of two-minute interval within a day, e.g. `qa.20200228351`. If the branch is `master` we'll use `dev` instead of a branch name (`dev.20200228351`). If the branch is `producion`, we'll omit a branch name: `20200228351`.
+2. Rebuild deliverables and inject a build number into them by webpack.
+3. Create a commit with updated deliverables.
+4. Tag that commit with a build number.
+
+
 
