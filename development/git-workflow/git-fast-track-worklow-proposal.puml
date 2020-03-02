@@ -1,81 +1,81 @@
 @startuml
-title A FAST TRACK DEVELOPMENT WORKFLOW\n notes in green indicates when version is changed\n those commits are tagged and pushed to npm\n yellow boxes are branches
+title A FAST TRACK DEVELOPMENT WORKFLOW\n green notes indicate a version change\n gray notes are git tags \n yellow boxes are branches
 participant "master\n development" as mst
 participant "feature-a\n (minor feature)" as f1
 participant "feature-b\n (patch feature)" as f2
 participant "feature-c\n (major fast track feature)" as f3
 participant "qa\n" as qa
-participant "qa-ft\n (fast-track)" as qaft
-participant "qa-fixes-1.3.1\n ad-hoc qa fixes" as qafix
-participant "qa-fixes-1.3.21\n ad-hoc qa fixes" as qafix2
-participant "release\n" as rel
+participant "ftqa\n (fast-track QA)" as ftqa
 participant "production\n" as prod
 
-note over mst #FFAAAA: v1.2.3-dev.3
+activate mst
+activate prod
+
+note over mst #FFAAAA: v1.2.3
 mst -> f1: Start a development of feature A
-note over f1 #FFAAAA: v1.2.3-dev.3
+activate f1
+note over f1 #FFAAAA: v1.2.3
 f1 -> f1: Develop a new feature
 mst -> f2: Start a development of feature B
-note over f2 #FFAAAA: v1.2.3-dev.3
+activate f2
+note over f2 #FFAAAA: v1.2.3
 f1 --> f1: Dev test
 f2 -> f2: Develop a new feature
 f1 -> f1: Fix issues
-note over f1 #FFAAAA: v1.2.3-dev.3
 mst -> f1: Merge upstream changes (if any)
 f1 -> mst: Feature A dev is complete (minor)
-note over mst #GreenYellow: v1.3.0-dev.0
+deactivate f1
+note over mst #FFAAAA: v1.2.3
 
 f2 --> f2: Dev test
 f2 -> f2: Fix issues
-note over f2 #FFAAAA: v1.2.3-dev.3
 mst -> f2: Merge upstream changes (if any)
 f2 -> mst: Feature B dev is complete (patch)
-note over mst #GreenYellow: v1.3.1-dev.0
+deactivate f2
+note over mst #FFAAAA: v1.2.3
 
 mst -> qa: Add a set of changes to QA
-note over qa #GreenYellow: v1.3.1-qa.0
+activate qa
+note over qa #FFAAAA: v1.2.3
+note over qa #LightSteelBlue: tag: qa.200228345
 qa --> qa: Testing
-qa -> qafix: Bugs found
-note over qafix #FFAAAA: v1.3.1-qa.0
-qafix -> qafix: Bug fixing
-note over qafix #FFAAAA: v1.3.1-qa.0
-qafix -> qa: Bugs fixed
-note over qa #GreenYellow: v1.3.1-qa.1
+qa -> qa: Bugs fixing
 
 mst -> f3: Start a development of a fast-track feature C
-note over f3 #FFAAAA: v1.3.1-dev.0
+activate f3
+note over f3 #FFAAAA: v1.2.3
 f3 -> f3: Develop a new feature
 f3 --> f3: Dev test
 f3 -> f3: Fix issues
-note over f3 #FFAAAA: v1.3.1-dev.0
 f3 -> mst: Fast-track feature C dev is complete (major)
+f3 -> ftqa: Add a new set of fast-track changes to QA
+deactivate f3
 
-f3 -> qaft: Add a new set of fast-track changes to QA
-note over qaft #GreenYellow: v2.0.0-qa.0
-qaft --> qaft: Testing
-qaft -> qafix2: Bugs found
-note over qafix2 #FFAAAA: v2.0.0-qa.0
-qafix2 -> qafix2: Bug fixing
-note over qafix2 #FFAAAA: v2.0.0-qa.0
-qafix2 -> qaft: Bugs fixed
-note over qaft #GreenYellow: v2.0.0-qa.1
-qaft --> qaft: Testing
-qaft -> rel: Changes approved
-note over rel #GreenYellow: v2.0.0-rel.0
-rel -> prod: Fast-track release
+activate ftqa
+note over ftqa #FFAAAA: v1.2.3
+note over ftqa #LightSteelBlue: tag: ftqa.200228444
+ftqa --> ftqa: Testing
+ftqa -> ftqa: Bug fixing
+note over ftqa #LightSteelBlue: tag: ftqa.200228497
+ftqa --> ftqa: Testing
+ftqa -> prod: Changes approved
+deactivate ftqa
 note over prod #GreenYellow: v2.0.0
+note over prod #LightSteelBlue: tag: v2.0.0
+note over prod #White: RC deployment
 
-rel -> mst: Merge fast-track changes back
-note over mst #GreenYellow: v2.0.0-dev.0
-rel -> qa: Merge fast-track changes to "normal" QA
-note over qa #GreenYellow: v2.1.1-qa.0\n(2.0.0 + minor + patch)
+prod -> mst: Merge fast-track changes back
+note over mst #FFAAAA: v2.0.0
+prod -> qa: Merge fast-track changes to "normal" QA
+note over qa #GreenYellow: v2.0.0
+note over qa #LightSteelBlue: tag: qa.200228561
 
 qa --> qa: Testing
-qa -> rel: Changes approved
-note over rel #GreenYellow: v2.1.1-rel.0
-rel -> mst: Merge fixes back
-note over mst #GreenYellow: v2.1.1-dev.0
-
-rel -> prod: Release to production
-note over prod #GreenYellow: v2.1.1
+qa -> prod: Changes approved
+deactivate qa
+note over prod #GreenYellow: v2.1.0
+note over prod #LightSteelBlue: tag: v2.1.0
+note over prod #Thistle: Prod deployment
+prod -> mst: Merge fixes back
+note over mst #FFAAAA: v2.1.0
 @enduml
