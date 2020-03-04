@@ -51,5 +51,20 @@ In all other branches we'll use a build number within a tagged commit to designa
 3. Create a commit with updated deliverables.
 4. Tag that commit with a build number.
 
+# Build Process for Creating a QA build
+
+1. create a `qa` branch on alpheios-core from `master`
+2. run `npm tagged-commit`
+3. push changes to GitHub
+4. create a `qa` branch on webextension from `master`
+5. run `npm tagged-commit`
+6. push changes to GitHub
+7. create a `qa` branch on embed-lib from `master`
+8. run `npm tagged-commit`
+9. push changes to GitHub
+
+After these steps, we should have the following
+1. new packages of alpheios-components and alpheios-embedded on NPM with the `@qa` tag
+2. GitHub releases of alpheios-core, webextension and embed-lib in GitHub
 
 
