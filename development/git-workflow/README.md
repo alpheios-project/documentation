@@ -55,13 +55,13 @@ In all other branches we'll use a build number within a tagged commit to designa
 
 1. create a `qa` branch on alpheios-core from `master`
 2. run `npm tagged-commit`
-3. push changes to GitHub
+3. run `git push --tag --set-upstream origin qa`
 4. create a `qa` branch on webextension from `master`
 5. run `npm tagged-commit`
-6. push changes to GitHub
+6. run `git push --tag --set-upstream origin qa`
 7. create a `qa` branch on embed-lib from `master`
 8. run `npm tagged-commit`
-9. push changes to GitHub
+9. run `git push --tag --set-upstream origin qa`
 
 After these steps, we should have the following
 1. new packages of alpheios-components and alpheios-embedded on NPM with the `@qa` tag
