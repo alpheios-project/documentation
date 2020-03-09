@@ -58,7 +58,7 @@ Prerequisite: create qa branches on alpheios-core, embed-lib and webextension an
 1. alpheios-core: merge master to qa
 2. alpheios-core: run `npm install && npm update`
 3. alpheios-core: run `npm tagged-commit`
-4. alpheios-core run `git push && git push --tag
+4. alpheios-core run `git push && git push --tag`
 5. embed-lib: merge master to qa
 6. embed-lib: run `npm install && npm update`
 7. embed-lib: run `npm tagged-commit`
