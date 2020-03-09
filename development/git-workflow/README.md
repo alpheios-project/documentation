@@ -66,7 +66,7 @@ Prerequisite: create qa branches on alpheios-core, embed-lib and webextension an
 9. webextension: merge master to qa
 10. webextension: run `npm install && npm update`
 11. webextension: run `npm tagged-commit`
-12. webextension: run `git push && git push --tag
+12. webextension: run `git push && git push --tag`
 
 After these steps, we should have the following
 1. new packages of alpheios-components and alpheios-embedded on NPM with the `@qa` tag
