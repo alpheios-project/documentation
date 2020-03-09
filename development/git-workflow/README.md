@@ -53,18 +53,53 @@ In all other branches we'll use a build number within a tagged commit to designa
 
 # Build Process for Creating a QA build
 
-1. create a `qa` branch on alpheios-core from `master`
-2. run `npm tagged-commit`
-3. run `git push --tag --set-upstream origin qa`
-4. create a `qa` branch on webextension from `master`
-5. run `npm tagged-commit`
-6. run `git push --tag --set-upstream origin qa`
-7. create a `qa` branch on embed-lib from `master`
-8. run `npm tagged-commit`
-9. run `git push --tag --set-upstream origin qa`
+Prerequisite: create qa branches on alpheios-core, embed-lib and webextension and push them upstream. 
+
+1. alpheios-core: merge master to qa
+2. alpheios-core: run `npm install && npm update`
+3. alpheios-core: run `npm tagged-commit`
+4. alpheios-core run `git push && git push --tag
+5. embed-lib: merge master to qa
+6. embed-lib: run `npm install && npm update`
+7. embed-lib: run `npm tagged-commit`
+8. embed-lib run `git push && git push --tag`
+9. webextension: merge master to qa
+10. webextension: run `npm install && npm update`
+11. webextension: run `npm tagged-commit`
+12. webextension: run `git push && git push --tag
 
 After these steps, we should have the following
 1. new packages of alpheios-components and alpheios-embedded on NPM with the `@qa` tag
 2. GitHub releases of alpheios-core, webextension and embed-lib in GitHub
+
+Running `tagged-commit` in __alpheios-core__ automates these steps:
+1. increases the build number and exports it to an environment variable which webpack injects into the code
+2. updates package.json to include the build number
+3. rebuilds
+4. tags the build
+
+Running `tagged-commit` in __embed-lib__ automates these steps:
+1. pulls in the `qa` branch of alpheios-core
+2. increases the build number and exports it to an environment variable which webpack injects into the code
+3. updates package.json to include the build number
+4. rebuilds
+5. tags the build 
+
+The webextension build:
+1. pulls in the `qa` branch of alpheios-core
+2. increases the build number and exports it to an environment variable which webpack injects into the code
+3. rebuilds 
+4. tags the build
+
+Outstanding issues:
+
+1. Ideally, everything except the merge of master to qa would be automated, so that a merge to qa from master would just kick off the build to run on the travis servers. 
+2. We still need to figure out how we want to handle integrating the alpheios auxiliary libraries into this process (alpheios-messaging, etc.)
+3. We should make sure that whenever a release goes to production, the base version of everything in master gets updated so that dev and qa builds always are higher versions than production.
+
+
+
+
+
 
 
