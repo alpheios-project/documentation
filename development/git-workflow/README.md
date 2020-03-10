@@ -56,7 +56,7 @@ In all other branches we'll use a build number within a tagged commit to designa
 Prerequisite: create qa branches on alpheios-core, embed-lib and webextension and push them upstream. 
 
 1. alpheios-core: merge master to qa
-2. alpheios-core: run `npm install && npm update`
+2. alpheios-core: run `npm clean && npm set-node-build-deps && npm bootstrap`
 3. alpheios-core: run `npm tagged-commit`
 4. alpheios-core run `git push && git push --tag`
 5. embed-lib: merge master to qa
@@ -73,23 +73,23 @@ After these steps, we should have the following
 2. GitHub releases of alpheios-core, webextension and embed-lib in GitHub
 
 Running `tagged-commit` in __alpheios-core__ automates these steps:
-1. increases the build number and exports it to an environment variable which webpack injects into the code
-2. updates package.json to include the build number
-3. rebuilds
-4. tags the build
+1. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+2. Updates the package.json files of all packages to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
+3. Rebuilds the components package.
+4. Tags the build and creates a release on GitHub.
 
 Running `tagged-commit` in __embed-lib__ automates these steps:
-1. pulls in the `qa` branch of alpheios-core
-2. increases the build number and exports it to an environment variable which webpack injects into the code
-3. updates package.json to include the build number
-4. rebuilds
-5. tags the build 
+1. Pulls in the `qa` branch of alpheios-core.
+2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+3. Updates package.json to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
+4. Rebuilds.
+5. Tags the build.
 
 The webextension build:
-1. pulls in the `qa` branch of alpheios-core
-2. increases the build number and exports it to an environment variable which webpack injects into the code
-3. rebuilds 
-4. tags the build
+1. Pulls in the `qa` branch of alpheios-core
+2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+3. Rebuilds 
+4. Tags the build.
 
 Outstanding issues:
 
@@ -97,7 +97,7 @@ Outstanding issues:
 2. We still need to figure out how we want to handle integrating the alpheios auxiliary libraries into this process (alpheios-messaging, etc.)
 3. We should make sure that whenever a release goes to production, the base version of everything in master gets updated so that dev and qa builds always are higher versions than production.
 4. We should use travis encryption so that we can include the env-ext.js in the webextension dist, making it fully functional.
-
+5. Clarify practice for updating and freezing dependencies.
 
 
 
