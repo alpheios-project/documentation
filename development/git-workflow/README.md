@@ -83,17 +83,17 @@ Running `tagged-commit` in __embed-lib__ automates these steps:
 2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
 3. Updates package.json to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
 4. Rebuilds.
-5. Tags the build.
+5. Tags the build and creates a release on GitHub.
 
 The webextension build:
 1. Pulls in the `qa` branch of alpheios-core
 2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
 3. Rebuilds 
-4. Tags the build.
+4. Tags the build and creates a release on GitHub.
 
 Outstanding issues:
 
-1. Ideally, everything except the merge of master to qa would be automated, so that a merge to qa from master would just kick off the build to run on the travis servers. 
+1. Everything except the merge of master to qa would be automated, so that a merge to qa from master would just kick off the build to run on the travis servers. 
 2. We still need to figure out how we want to handle integrating the alpheios auxiliary libraries into this process (alpheios-messaging, etc.)
 3. We should make sure that whenever a release goes to production, the base version of everything in master gets updated so that dev and qa builds always are higher versions than production.
 4. We should use travis encryption so that we can include the env-ext.js in the webextension dist, making it fully functional.
