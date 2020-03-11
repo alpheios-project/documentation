@@ -99,7 +99,12 @@ Features:
 * Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. 
 * Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   
 * The alignment interface should allow users to specify where the linebreaks should occur while aligning. Users would be able to create multiple alignments of the same section of text, in multiple languages and choose from among them when exporting their data/display. 
-* For an exported display containing multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once.  
+* Exported HTML display requirements: 
+    * if line breaks were preserved, we obey them
+    * if it contains multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once
+    * the ability to select different translations for different sections of the text
+    * the ability click on a word in the source text and limit the aligned translation to just the translated words
+    * the ability click on a word in the source text and limit the aligned translation to just the sentences that contain the translated words
 * Size of alignments allowed might need to be limited to a max number of words for performance or other reasons.  
 
 
