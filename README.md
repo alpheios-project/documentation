@@ -3,7 +3,7 @@
 This repository contains the Alpheios Developer Documentation. The issues list is the place to discuss major development issues such as refactoring, 
 technologies decisions, etc.
 
-This README document summaries are current development practices.
+This README document summarizes our current development practices.
 
 ## GitHub Workflows
 
