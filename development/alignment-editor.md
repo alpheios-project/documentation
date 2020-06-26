@@ -1,10 +1,89 @@
 # The Alpheios Alignment Editor 
 
+## Version 2.0
+
+Version 2.0 will be a full rewrite of the 1.0 Alignment Editor with up to date technologies.  The initial release will be as a stand alone tool and will not be embedded within the Alpheios Reading Tools interface. The design should be able to accomodate future inclusion in the Alpheios Reading Tools UI should that be desired in the future. The new Alignment Editr will share the user authentication infrastructure with the Alpheios Reading tools so that data can be shared across the various tools in the Alpheios ecosystem.
+
+## Main Feature Requirements
+
+The main function of the Alignment Editor is to allow users to create and edit word-by-word alignments of a pre-existing source text with one or more pre-existing translations of that text.  
+
+### Text Input Sources
+1. Must accept input of source and translation text in both plain text and TEI XML
+1. Must accept input of multiple translations per source text in multiple languages
+1. Must segment and tokenize input text using language and format appropriate algorithms
+1. Must preserve line breaks in input
+1. Must allow user to edit segmentation and tokenization results **before they start aligning a text**
+1. Must allow user to edit line breaks **at any point during alignment**
+1. Should support retrieval of input text from a [DTS API endpoint](https://distributed-text-services.github.io/specifications/)
+
+## Alignment Features
+
+1. Must support the same alignment workflows as the 1.0 Editor:
+    1. Workflow 1 New Alignment starting from Source
+        * Click on a word in the source text 
+        * Click on one or more words in the translation text
+        * Click on the aligned word in the source text to save
+    2. Workflow 2 New Aignment starting from Translation
+        * Click on a word the translation text
+        * Click on one or more words in the source text
+        * Click on the aligned word in the translation text to save
+    3. Workflow 3 Add a source word to an existing alignment
+        * Click on an aligned word in the translation text
+        * Click on a new word in the source text
+        * Click on the aligned word in the translation text to save
+    4. Workflow 4 Add a translation world to an existing alignment
+        * Click on an aligned word in the source text
+        * Click on a new word in the translation text
+        * Click on the aligned word in the source text to save
+    4. Remove a source word from an existing alignment
+        * Click on an aligned word in the translation text
+        * Click on an aligned source word in the source text
+        * Click on the aligned word in the translation text to save
+    5. Remove a translation word from an existing alignment
+        * Click on an aligned word in the source text
+        * Click on an aligned source word in the translation text
+        * Click on the aligned word in the source text to save
+1. Must support highlighting of aligned words in both source and translation text on mouseover
+1. Must support option to show alignments interlinearly  
+1. Must support undo/redo for each saved alignment action
+1. Must support ability to add a comment on any set of aligned words
+1. Must support ability to switch between different translations to align for a single source text
+1. Must support display of preserved line breaks while aligning
+1. Must support ability to navigate between multiple segments (i.e. sentences) of a source text
+
+
+
+## User Stories
+
+## Prototype Ideas
+
+### User Alignments From Within Alpheios
+
+Features:
+
+* The ability for a user of the Apheios Reading Tools to create alignments of texts they are reading directly from within the website they are viewing. 
+    * this should preserve the essentially simultaneous response of the highlighting in the opposite pane when a word is selected
+    * a companion site using the Alpheios Embedded Library could be used for people to "try-out" alignments of pasted source and translation text, without the ability to save or reaccess the alignment from within that interface, although they would be able to export it.  Something similar to e.g. https://jsonformatter.org/json-pretty-print
+* Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. 
+* Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   
+* The alignment interface should allow users to specify where the linebreaks should occur while aligning. Users would be able to create multiple alignments of the same section of text, in multiple languages and choose from among them when exporting their data/display. 
+* Exported HTML display requirements: 
+    * if line breaks were preserved, we obey them
+    * if it contains multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once
+    * the ability to select different translations for different sections of the text
+    * the ability click on a word in the source text and limit the aligned translation to just the translated words
+    * the ability click on a word in the source text and limit the aligned translation to just the sentences that contain the translated words
+* Size of alignments allowed might need to be limited to a max number of words for performance or other reasons.  
+
+
+## Version 1.0
+
 Source repository: https://github.com/alpheios-project/alignment-editor
 
 Dockerfile repository: https://github.com/alpheios-project/editors-docker
 
-## Overview
+### Overview
 
 The Alignment Editor is composed of the following parts:
 
@@ -50,7 +129,7 @@ alignment was created, it _may_ identify (e.g. with a link or other identifier) 
 implicit in the schema and is entirely dependent upon the environment which is hosting the tool and the workflow it uses. 
 It does not contain any information about how the text should be formatted for display, other than text direction.
 
-## Uses of Alignment Editor Output
+### Uses of Alignment Editor Output
 
 The Alpheios.net site currently demonstrates two different types of displays using data from the Alignment Editor
 
@@ -75,7 +154,7 @@ underlying document, where both the translation and the source text are in the s
 identified by CSS selectors supplied in the `data-alpheios_align_ref` attribute of a word. But there is currently no 
 automated workflow to create such an HTML document from the Alignment Editor output).
 
-## State of the code
+### State of the code
 
 The Alignment Editor was written in 2010 and the code has not been substantially updated since then.
 
@@ -87,25 +166,6 @@ The XSLT translformations are version 1.0
 
 The package itself has not been tested on any version of eXist later than 2.2.
 
-## Prototype Ideas
-
-### User Alignments From Within Alpheios
-
-Features:
-
-* The ability for a user of the Apheios Reading Tools to create alignments of texts they are reading directly from within the website they are viewing. 
-    * this should preserve the essentially simultaneous response of the highlighting in the opposite pane when a word is selected
-    * a companion site using the Alpheios Embedded Library could be used for people to "try-out" alignments of pasted source and translation text, without the ability to save or reaccess the alignment from within that interface, although they would be able to export it.  Something similar to e.g. https://jsonformatter.org/json-pretty-print
-* Allow these alignments to be saved to a user account, and exported as either XML alignment data (per the Alpheios alignment schema), or as a functional HTML display. 
-* Formatting of text in the exported display would be limited to inclusion of user-specified line breaks -- original page markup and/orCSS would not be preserved.   
-* The alignment interface should allow users to specify where the linebreaks should occur while aligning. Users would be able to create multiple alignments of the same section of text, in multiple languages and choose from among them when exporting their data/display. 
-* Exported HTML display requirements: 
-    * if line breaks were preserved, we obey them
-    * if it contains multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once
-    * the ability to select different translations for different sections of the text
-    * the ability click on a word in the source text and limit the aligned translation to just the translated words
-    * the ability click on a word in the source text and limit the aligned translation to just the sentences that contain the translated words
-* Size of alignments allowed might need to be limited to a max number of words for performance or other reasons.  
 
 
 
