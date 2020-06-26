@@ -54,6 +54,8 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Must support display of preserved line breaks while aligning
 1. Must support scrolling of source text and translation text separately
 1. Must support option to enable the Alpheios Reading Tools on the source and translation text 
+1. Must support the CSS color scheme of the Version 1.0 editor
+1. May support user specfied CSS themes
 
 ### Output Requirements
 
