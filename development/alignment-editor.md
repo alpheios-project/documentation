@@ -4,11 +4,9 @@
 
 Version 2.0 will be a full rewrite of the 1.0 Alignment Editor with up to date technologies.  The initial release will be as a stand alone tool and will not be embedded within the Alpheios Reading Tools interface. The design should be able to accomodate future inclusion in the Alpheios Reading Tools UI should that be desired in the future. The new Alignment Editr will share the user authentication infrastructure with the Alpheios Reading tools so that data can be shared across the various tools in the Alpheios ecosystem.
 
-## Main Feature Requirements
-
 The main function of the Alignment Editor is to allow users to create and edit word-by-word alignments of a pre-existing source text with one or more pre-existing translations of that text.  
 
-### Text Input Sources
+### Text Input Requirements
 1. Must accept input of source and translation text in both plain text and TEI XML
 1. Must accept input of multiple translations per source text in multiple languages
 1. Must tokenize input text into words using language and format appropriate algorithms
@@ -19,7 +17,7 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. May support retrieval of input text from a [DTS API endpoint](https://distributed-text-services.github.io/specifications/)
 1. May impose restrictions on the length of allowed input text.
 
-### Alignment Interface
+### Alignment Interface Requirements
 
 1. Must support the same alignment workflows as the 1.0 Editor:
     1. Workflow 1 New Alignment starting from Source
