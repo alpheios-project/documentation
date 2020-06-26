@@ -2,7 +2,7 @@
 
 ## Version 2.0
 
-Version 2.0 will be a full rewrite of the 1.0 Alignment Editor with up to date technologies.  The initial release will be as a stand alone tool and will not be embedded within the Alpheios Reading Tools interface. The design should be able to accomodate future inclusion in the Alpheios Reading Tools UI should that be desired in the future. The new Alignment Editr will share the user authentication infrastructure with the Alpheios Reading tools so that data can be shared across the various tools in the Alpheios ecosystem.
+Version 2.0 will be a full rewrite of the 1.0 Alignment Editor with up to date technologies.  The initial release will be as a stand alone tool with the Alpheios Reading tools embedded/embeddable. The design should not preclude the possibility that the alignment interface might itself be included in the Alpheios Reading Tools browser extension at some point in the future shoudl that be desired in the future. The new Alignment Editor will share the user authentication infrastructure with the Alpheios Reading tools so that data can be shared across the various tools in the Alpheios ecosystem.
 
 The main function of the Alignment Editor is to allow users to create and edit word-by-word alignments of a pre-existing source text with one or more pre-existing translations of that text.  
 
