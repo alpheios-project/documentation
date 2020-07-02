@@ -7,15 +7,20 @@ Version 2.0 will be a full rewrite of the 1.0 Alignment Editor with up to date t
 The main function of the Alignment Editor is to allow users to create and edit word-by-word alignments of a pre-existing source text with one or more pre-existing translations of that text.  
 
 ### Text Input Requirements
-1. Must accept input of source and translation text in both plain text and TEI XML
+1. Must accept input of source and translation text in either plain text and TEI XML
 1. Must accept input of multiple translations per source text in multiple languages
+1. Must support retrieval of input text via file upload from the local file system
+1. Must support creation of a new alignment via a file upload of a file adhering to the Alpheios XML alignment schema
+1. May support retrieval of input text from a [DTS API document endpoint URL](https://distributed-text-services.github.io/specifications/)
+1. May impose restrictions on the length of allowed input text if necessary.
+1. Must allow user to add identifying bibliographic metadata about source and translation texts (e.g. author, title, edition, etc.)
+1. May support automatic detection of metadata provided in Dublin Core or other standard in the source input text (in the case of TEI input)
 1. Must tokenize input text into words using language and format appropriate algorithms
 1. Must preserve line breaks in input
 1. Must consider input source and translation text to be a single "chunk" of text to be aligned regardless of how many sentences are contained in either. (Alignment is word level only, not first sentence, then word).
-1. Must allow user to edit tokenization results **before they start aligning a text**
+1. Must allow user to edit tokenization results **before they start aligning a text** (because supporting editing words once alignment is started is not in scope)
 1. Must allow user to edit line breaks **at any point during alignment**
-1. May support retrieval of input text from a [DTS API endpoint](https://distributed-text-services.github.io/specifications/)
-1. May impose restrictions on the length of allowed input text.
+1. May allow user to append words to the beginning or end of the source and translation texts once alignment has started 
 
 ### Alignment Interface Requirements
 
@@ -61,19 +66,26 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Must support output of alignment as self-contained HTML with the following features
     1. mouseover/interlinear display of alignments as in the editing interface (but read only)
     1. any line breaks shown 
+    1. several display modes: 
+        1. full panel on right devoted to a single translation (as now) chosen by the user, but allowing the user to change the translation at will 
+        1. right hand scrollable panel displays only the words that match the selected words in the original on the left in a scrollable panel- from as many translations as the user has chosen and in the order they have chosen 
+        1. right hand scrollable panel displays only the complete sentences containing any words matching the word or phrase selected in the origina l- from as many translations as the user has chosen and in the order they have chosen. (An even broader context might be considered, eg a sentence before and after). 
+    1. the ability of the user to toggle among the different display modes while viewing the alignment
     1. if it contains multiple translations, the user should be able to choose the sequence in which they are displayed and how many to display at once
     1. the ability to select different translations for different sections of the text
-    1. the ability click on a word in the source text and limit the aligned translation to just the translated words
-    1. the ability click on a word in the source text and limit the aligned translation to just the sentences that contain the translated words
     1. an option to embed the Alpheios Reading Tools in the display
 1. Must support output of alignment as JSON-LD annotations adhering to the W3C Annotation Data Model
 
 ### User Account Requirements
 
 1. Must offer option to login to Alpheios user account 
-1. Must not require login to create an alignment, only to save the alignment.
+1. Must not require login to create an alignment, only to save the alignment (i.e. for returning to at a later date in the remote user store).
 1. May provide access to other Alpheios user data (such as user word list)
 
+### Outstanding questions
+
+1. Do we want to support other modes of anchoring an alignment, eg. such as one which allows a user to select multiple words from source or translation text before selecting the aligned words, and using a button or other ui interaction to anchor the alignment rather than a click on a word in the original selection?
+1. Do we want to reconsider allowing for edits of source or aligned text after starting alignment? This would impose an additional requirement that the history of all edits of a text be captured and recorded.
 
 ## Version 1.0
 
