@@ -87,6 +87,7 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Do we want to support other modes of anchoring an alignment, eg. such as one which allows a user to select multiple words from source or translation text before selecting the aligned words, and using a button or other ui interaction to anchor the alignment rather than a click on a word in the original selection?
 1. Do we want to reconsider allowing for edits of source or aligned text after starting alignment? This would impose an additional requirement that the history of all edits of a text be captured and recorded.
 1. Do we want to support TMX as an output or input format? (https://www.gala-global.org/tmx-14b)
+1. What are the requirements for storing and searching alignments across users? 
 
 ## Version 1.0
 
