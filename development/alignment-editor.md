@@ -88,6 +88,7 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Do we want to reconsider allowing for edits of source or aligned text after starting alignment? This would impose an additional requirement that the history of all edits of a text be captured and recorded.
 1. Do we want to support TMX as an output or input format? (https://www.gala-global.org/tmx-14b)
 1. What are the requirements for storing and searching alignments across users? 
+1. What are the requirements for saving data from anonymous users?
 
 ## Version 1.0
 
