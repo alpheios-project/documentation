@@ -97,6 +97,7 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. What are the requirements for saving data from anonymous users?
 1. Do we want to offer interface features to allow a user to identify or change the segmentation of an aligned text?
 1. What metadata do we want to be able to import from a source document other than bibliographic? E.g. what about treebank data references?
+1. Are alignments of words belonging to different segments allowed?
 
 ## Version 1.0
 
