@@ -21,6 +21,7 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Must preserve line breaks in plain text input
 1. Should support user identification of TEI elements representing line breaks in TEI input
 1. If input does not provide aligned segments, then input source and translation text is to be initially identified as a single segment of text to be aligned (no automatic segmentation)
+1. If input identifies aligned segments, then this information must be preserved with the alignment. 
 1. Must allow user to edit tokenization results **before they start aligning a text** (because supporting editing words once alignment is started is not in scope)
 1. Must allow user to edit line breaks **at any point during alignment**
 1. May allow user to append words to the beginning or end of the source and translation texts once alignment has started 
