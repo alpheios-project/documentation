@@ -10,17 +10,23 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Must accept input of source and translation text in either plain text and TEI XML
 1. Must accept input of multiple translations per source text in multiple languages
 1. Must support retrieval of input text via file upload from the local file system
-1. Must support creation of a new alignment via a file upload of a file adhering to the Alpheios XML alignment schema
+1. Must support creation of a new alignment via upload of a file adhering to the Alpheios XML alignment schema
+1. Must support creation of a new alignment via upload of a set of plain text matched segments
+1. Should be extensible to easily support creation of new alignments from other automatic alignment output formats
 1. May support retrieval of input text from a [DTS API document endpoint URL](https://distributed-text-services.github.io/specifications/)
 1. May impose restrictions on the length of allowed input text if necessary.
 1. Must allow user to add identifying bibliographic metadata about source and translation texts (e.g. author, title, edition, etc.)
-1. May support automatic detection of metadata provided in Dublin Core or other standard in the source input text (in the case of TEI input)
+1. May support automatic detection of metadata provided in Dublin Core, Schema.org or other standard in the source input text (in the case of TEI input)
 1. Must tokenize input text into words using language and format appropriate algorithms
-1. Must preserve line breaks in input
-1. Must consider input source and translation text to be a single "chunk" of text to be aligned regardless of how many sentences are contained in either. (Alignment is word level only, not first sentence, then word).
+1. Must preserve line breaks in plain text input
+1. Should support user identification of TEI elements representing line breaks in TEI input
+1. If input does not provide aligned segments, then input source and translation text is to be initially identified as a single segment of text to be aligned (no automatic segmentation)
+1. If input identifies aligned segments, then this information must be preserved with the alignment. 
 1. Must allow user to edit tokenization results **before they start aligning a text** (because supporting editing words once alignment is started is not in scope)
 1. Must allow user to edit line breaks **at any point during alignment**
 1. May allow user to append words to the beginning or end of the source and translation texts once alignment has started 
+1. Must allow for input/upload of new translation texts once alignment has started (i.e. addition of a new target text)
+
 
 ### Alignment Interface Requirements
 
@@ -89,6 +95,9 @@ The main function of the Alignment Editor is to allow users to create and edit w
 1. Do we want to support TMX as an output or input format? (https://www.gala-global.org/tmx-14b)
 1. What are the requirements for storing and searching alignments across users? 
 1. What are the requirements for saving data from anonymous users?
+1. Do we want to offer interface features to allow a user to identify or change the segmentation of an aligned text?
+1. What metadata do we want to be able to import from a source document other than bibliographic? E.g. what about treebank data references?
+1. Are alignments of words belonging to different segments allowed?
 
 ## Version 1.0
 
