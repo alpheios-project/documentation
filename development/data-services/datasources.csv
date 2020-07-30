@@ -1,0 +1,19 @@
+Status,Data Source,Proxys Access To,Data Types Provided,Depends On,Data Resides On,API Resides On,Cacheable
+Current,Alpheios Morphology Service,"Individual Morphological Parsers, remote and local","Stem, Suffix, Prefix, Lemma, Principal Parts, Short Definitions, Lemma Features, Examples, Inflections","Word, Context",Server,Server,Yes
+Current,Lexis-CS,Word form dictionaries (e.g cedict),"Lemma, Short Definitions, Lemma Features, Examples","Word, Context",Server,Client,Yes
+Current,Alpheios Shortdef Index,N/A,Short Definitions,Lemma,Server,Server or Client,Yes
+Current,Alpheios Lexicon Service,TEI XML Lexicons,Full Definitions,Lemma,Server,Server,Yes
+Current,Alpheios Translation Service,Lemma Translation Data,Lemma Translations (Glosses),Lemma,Server,Server,Yes
+Current,Treebank Template Repository,Treebank Data Repositories,"Lemma, Inflection","Word, Context, Metadata",Server,Client,No
+Current,3rd Party Collocation Service,N/A,Examples,"Word, Context",Server,Server,Yes
+Current,Alphieos User Wordlist,Prior Lookup Results,Full or Partial Homonym,Word,Server and Client,Server and Client,No
+Planning Stage,3rd Party Dictionary Service,N/A,"Short Definitions, Full Definitions","Word, Context",Server,Server,Yes
+Planning Stage,Alpheios User History,Prior Lookup Results,Full Homonym,,,,
+Planning Stage,Alpheios User Morph Data,N/A,"Stem, Suffix, Prefix, Lemma, Principal Parts, Lemma Features, Examples, Inflections, Comments","Word, Context",TBD,TBD,TBD
+Planning Stage,Alpheios User Short Definitions,N/A,Short Definitions,"Lemma, Word, Context",TBD,TBD,TBD
+Planning Stage,Alpheios User Alignment Data,N/A,"Word Translations, Usage Examples","Word, Context",TBD,TBD,TBD
+Planning Stage,Alpheios Linked Resource Index,TBD,"Links to external resources (dictionaries, etc.)","Lemma, Word, Context",TBD,TBD,TBD
+Future,Alpheios Morph Data Service,TBD,"Stem, Suffix, Prefix, Lemma, Principal Parts, Lemma Features, Examples, Inflections, Comments","Lemma, Word, Context",TBD,TBD,TBD
+Future,3rd Party ML/NLP Service,TBD,"Lemma, Lemma Features, Inflection, Short Definitions, Word Translations","Word, Context",Server,Server,TBD
+Future,3rd Party Wordnet Service,TBD,Synsets,"Word, Context",Server,Server,TBD
+Future,Other Data Source,TBD,"Principal Parts, Named Entity Data, ....","Word, Context, Lemma, Metadata",TBD,TBD,TBD
