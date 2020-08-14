@@ -55,49 +55,57 @@ In all other branches we'll use a build number within a tagged commit to designa
 
 Prerequisite: create qa branches on alpheios-core, embed-lib and webextension and push them upstream. 
 
-1. alpheios-core: merge master to qa
-2. alpheios-core: run `npm clean && npm set-node-build-deps && npm bootstrap`
-3. alpheios-core: run `npm tagged-commit`
-4. alpheios-core run `git push && git push --tag`
-5. embed-lib: merge master to qa
-6. embed-lib: run `npm install && npm update`
-7. embed-lib: run `npm tagged-commit`
-8. embed-lib run `git push && git push --tag`
-9. webextension: merge master to qa
-10. webextension: run `npm install && npm update`
-11. webextension: run `npm tagged-commit`
-12. webextension: run `git push && git push --tag`
+## Alpheios Core (alpheios-components package)
 
-After these steps, we should have the following
-1. new packages of alpheios-components and alpheios-embedded on NPM with the `@qa` tag
-2. GitHub releases of alpheios-core, webextension and embed-lib in GitHub
+In alpheios-core repository merge master to qa.
 
-Running `tagged-commit` in __alpheios-core__ automates these steps:
-1. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
-2. Updates the package.json files of all packages to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
-3. Rebuilds the components package.
-4. Tags the build and creates a release on GitHub.
+The GitHubAction QA Build Workflow will run upon the merge. It executes the following steps:
+   * Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+   * Updates the lerna.json and package.json files of all packages to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
+   * Rebuilds the components package.
+   * Tags the build and creates a release on GitHub.
+   * Publishes the alpheios-components package to NPM
 
-Running `tagged-commit` in __embed-lib__ automates these steps:
-1. Pulls in the `qa` branch of alpheios-core.
-2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
-3. Updates package.json to include the build number. The build number must be included in package.json so that we can publish multiples builds of the same base version on NPM.
-4. Rebuilds.
-5. Tags the build and creates a release on GitHub.
+A successful outcome is a QA Release in GitHub and an alpheios-components package published to NPM under the `@qa` tag
 
-The webextension build:
-1. Pulls in the `qa` branch of alpheios-core
-2. Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
-3. Rebuilds 
-4. Tags the build and creates a release on GitHub.
+## Webextension 
 
-Outstanding issues:
+If there are alpheios-components changes, first complete the QA build of Alpheios Core.
 
-1. Everything except the merge of master to qa would be automated, so that a merge to qa from master would just kick off the build to run on the travis servers. 
-2. We still need to figure out how we want to handle integrating the alpheios auxiliary libraries into this process (alpheios-messaging, etc.)
-3. We should make sure that whenever a release goes to production, the base version of everything in master gets updated so that dev and qa builds always are higher versions than production.
-4. We should use travis encryption so that we can include the env-ext.js in the webextension dist, making it fully functional.
-5. Clarify practice for updating and freezing dependencies.
+If there are webextension code changes, merge the webextension repository master branch to qa.  This will kick off the QA Build workflow in GitHub actions.
+
+If there are only alpheios-components changes and **no** changes in the webextension code, then the QA build can be started directly from GitHub Actions manually because there is nothing to merge from master to QA in the webextension repo. Go to the Actions tab of the alpheios-project/webextension repo in GitHub and start the QA Build workflow manually on the qa branch.
+
+The GitHubAction QA Build Workflow of the webextension executes the following steps:
+   * Installs the qa branch of alpheios-core
+   * Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+   * Rebuilds the code
+   * Builds and zips the dist directory
+   * Tags the build and creates a release on GitHub
+    * Publishes the alpheios-embedded package to NPM
+
+A successful outcome is a QA Release in GitHub with an installable dist.zip directory.
+
+**NOTE**: The Safari build is still archived manually in XCode. This needs to be automated.
+
+## Embedded Library
+
+Merge the embed-lib repository master branch to qa.  This will kick off the QA Build workflow in GitHub actions.
+
+The GitHubAction QA Build Workflow of the embed-lib executes the following steps:
+   * Installs the qa branch of alpheios-core
+   * Generates the build number and passes it to the node-build build script as a parameter. The build script injects it into the code.
+   * Rebuilds the code
+   * Tags the build and creates a release on GitHub and uploads the zipped dist directory as a release artifact.
+
+A successful outcome is a QA Release in GitHub and an alpheios-embedded package published to NPM under the `@qa` tag
+
+## Outstanding issues:
+
+1. Add production workflow to GitHub Actions
+1. Add the Safari build of the webextension to GitHub Actions
+2. Clarify practice for updating and freezing dependencies, inclusing those of other alpheios auxiliary libraries  (alpheios-messaging, etc.)
+3. Decide and document practice around updating base versions numbers in master (making sure dev and qa builds always are higher versions than production).
 
 
 
