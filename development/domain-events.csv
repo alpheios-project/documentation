@@ -6,28 +6,3 @@ Text Selector Created,System,Create User Word List,User Word List Created,User W
 Text Selector Created,System,Create Word Request,Word Request Created,Word Request,-,-
 Word Request Created,System,Create Homonym Group,Homonym Group Created,Homonym Group,-,-
 Word Request Created,System,Add Word Request to Session History,Word Request added to Session History,Session History,-,-
-Word Request Created,System,Create User Wordlist Item,User Wordlist Item Created,User Wordlist Item,-,-
-Word Request Created,System,Add Context to User Wordlist Item,Context added to User Wordlist Item ,-,-
-Word Request Created,System,Retrieve Homonym,Homonym Retrieved,Homonym,-,-
-Word Request Created,System,Retrieve Lexeme,Lexeme Retrieved,Lexeme,-,-
-Lexeme Retrieved,System,Add Lexeme to Homonym,Lexeme added to Homonym,Homonym,-,-
-Lexeme Added to Homonym,System,Disambiguate Lexemes,Lexemes Disambiguated,Homonym,-,-
-Lexeme Retrieved,System,Retrieve Inflection,Inflection Retrieved,Inflection,-,-
-Inflection Retrieved,System,Add Inflection to Lexeme,Inflection added to Lexeme,Lexeme,-,-
-Inflection Added to Lexeme,System,Disamibugate Inflections,Inflections Disambiguated,Lexeme,-,-
-Lexeme Retrieved,System,Retrieve Principal Parts,Principal Retrieved,Principal Parts,-,-
-Homonyn Retrieved,Lexeme Retrieved,System,Retrieve Short Definition,Short Definition Retrieved,Short Definition,-,-
-Short Definition Retrieved,System,Add Short Definition to Lexeme,Short Definition added to Lexeme,Lexeme,-,-
-Short Definition Added To Lexeme,System,Disambiguate Short Definitions,Short Definitions Disamibugated,Lexeme,-,-
--,User,Disamibugate Lexeme,Lexeme Disamibugated by User,Lexeme,Morph Component,-,-
-Lexeme Disambiguated by User,User,Save Lexeme Disamibugation to Remote Storage, Lexeme Disamibugation Saved to Remote Storage,Lexeme,-,-
--,User,Create Lexeme,Lexeme Created,-,-
-Lexeme Created,User,Create Lemma,Lemma Created,-,-
-Lemma Created,User,Add Lemma to Lexeme,Lemma Added to Lexeme,-,-
-Lemma Created,User,Save Lemma (Remote),Lemma Saved (Remote),-,-
-Lexeme Created,User,Add Lexeme to Homonym,Lexeme added to Homonym,-,-
-Lexeme  added to Homonym,User,Save Lexeme to Remote Storage,Lexeme Saved to Remote Storage,-,-
-0,User,Create Inflection,Inflection Created,-,-
-Inflection Created,User,Add Inflection to Lexeme,Inflection added to Lexeme,-,-
-Inflected added to Lexeme,User,Save Lexeme to Remote Storage,Lexeme Saved to Remote Storage,-,-
-
