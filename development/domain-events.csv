@@ -1,8 +1,0 @@
-[Precursor Event],Actor(s),Command,Event,Aggregate,Originating Views,Affected Views
--,User,Select Text,Text Selector Created,Text Selector,Web Page Alpheios Popup User Wordlist,-
--,User,Enter Text,Text Selector Created,Text Selector,Lookup Component,-
-Text Selector Created,System,Create Session History,Session History Created,Session History,Session History,-
-Text Selector Created,System,Create User Word List,User Word List Created,User Word List,User Word List,-
-Text Selector Created,System,Create Word Request,Word Request Created,Word Request,-,-
-Word Request Created,System,Create Homonym Group,Homonym Group Created,Homonym Group,-,-
-Word Request Created,System,Add Word Request to Session History,Word Request added to Session History,Session History,-,-
