@@ -1,0 +1,46 @@
+[Precursor Events]	[PreCondition]	Actor(s)	Command	Event	Aggregate	Originating Views	Affected Views
+	Alpheios Active	User	Select Text	Text Selector Created	Text Selector	Web Page, Alpheios Popup, User Wordlist	
+	Alpheios Active	User	Enter Text	Text Selector Created	Text Selector	Lookup Component	
+		User	Login	User Authenticated	User	User Component	User Component
+User Authenticated		Business Process	Load User Word List	User Word List Loaded	User Word List	User Component	Word List
+	User Authenticated	User	Logout	User Logged Out	User	User Component	User Component
+User Logged Out		Business Process	Clear User Word List	User Word List Cleared	User Word List	User Component	Word List
+User Logged Out		Business Process	Clear Session History	Session History Cleared	Session History	User Component	Session History
+Text Selector Created		Business Process	Create Session History	Session History Created	Session History	Web Page, Alpheios Popup, User Wordlist	Session History
+Text Selector Created		Business Process	Create User Word List	User Word List Created	User Word List	Web Page, Alpheios Popup, User Wordlist	User Word List
+Text Selector Created		Business Process	Create Word Request	Word Request Created	Word Request	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Word Request Created		Business Process	Add Word Request to Session History	Word Request added to Session History	Session History	Web Page, Alpheios Popup, User Wordlist	Session History
+Word Request Created		Business Process	Create User Wordlist Item	User Wordlist Item Created	User Wordlist Item	Web Page, Alpheios Popup, User Wordlist	User Word List
+Word Request Created	Wordlist Item exists	Business Process	Add Context (TextSelector) to User Wordlist Item	Context (TextSelector) added to User Wordlist Item	User Wordlist Item	Web Page, Alpheios Popup, User Wordlist	User Word List
+Word Request Created	Wordlist Item exists	Business Process	Update Date on User Wordlist Item	Date updated on User wordlist Item	User Wordlist Item	Web Page, Alpheios Popup, User Wordlist	User Word List
+Word Request Created		Business Process	Create Lexical Query	Lexical Query Created	Lexical Query	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexical Query Created		Data Adapter, User	Create Lemma	Lemma Created	Lemma	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created		Data Adapter, User	Create Feature	Feature Created	Feature	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created, Feature Created		Data Adapter, User	Add Feature to Lemma	Feature added to Lemma	Lemma	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created		Data Adapter, User	Create Inflection	Inflection Created	Inflection	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created, Inflection Created		Data Adapter, User	Add Inflection to Lemma	Inflection Added to Lemma	Lemma	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created		Data Adapter, User	Create Principal Parts	Principal Parts Created	Principal Parts	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created, Principal Parts Created		Data Adapter, User	Add Principal Parts to Lemma	Principal Parts Added to Lemma	Lemma	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created		Data Adapter, User	Create Lemma Translation	Lemma Translation Created	Lemma Translation	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created, Lemma Translation Created		Data Adapter, User	Add Lemma Translation to Lemma	Lemma Translation added to Lemma	Lemma	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created		Data Adapter, User	Create Lexeme	Lexeme Created	Lexeme	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lemma Created, Lexeme Created		Data Adapter, User	Add Lemma to Lexeme	Lemma Added to Lexeme	Lexeme	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexeme Created		Data Adapter, User	Create Short Definition	Short Definition Created	Definition	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexeme Created, Short Definition Created		Data Adapter, User	Add Short Definition to Lexeme	Short Definition added to Lexeme	Lexeme	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexeme Created		Lexical Query	Create Homonym	Homonym Created	Homonym	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexeme Created, Homonym Created		Lexical Query	Add Lexeme to Homonym	Lexeme Added to Homonym	Homonym	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Homonym Created		Lexical Query, Data Adapter	Create Homonym Group	Homonym Group Created	Homonym Group	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Homonym Created, Homonym Group Created		Lexical Query, Data Adapter	Add Homonym to Homonym Group	Homonym Added to Homonym Group	Homonym Group	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Inflection Added To Lexeme		Lexical Query, User	Disambiguate Inflections in Lexeme	Inflections Disambiguated in Lexeme	Lexeme, Word Request	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+Lexeme Added to Homonym		Lexical Query, User	Disambiguate Homonym	Homonym Disambiguated	Homonym, Word Request	Web Page, Alpheios Popup, User Wordlist	Morphology Component
+		User	Remove Inflection from Lexeme	Inflection Removed from Lexeme	Lexeme	Morphology Component	Morphology Component
+		User	Remove Feature from Lemma	Feature Removed from Lemma	Lemma	Morphology Component	Morphology Component
+		User	Remove Translation from Lemma	Translation Removed from Lemma	Translation, Lemma	Morphology Component	Morphology Component
+(all events effecting lexeme contents)	User Authenticated	User	Save Lexeme	Lexeme Saved	Lexeme	Morphology Component	Morphology Component
+(all events effecting lemma contents)	User Authenticated	User	Save Lemma	Lemma Saved	Feature, Lemma	Morphology Component	Morphology Component
+Principal Parts Added to Lemma	User Authenticated	User	Save Principal Parts	Principal Parts Saved	Principal Parts, Lemma	Morphology Component	Morphology Component
+Inflection Added To Lexeme	User Authenticated	User	Save Inflection	Inflection Saved	Inflection, Lexeme	Morphology Component	Morphology Component
+Lemma Translation Created	User Authenticated	User	Save Lemma Translation	Lemma Translation Saved	Translation, Lemma	Morphology Component	Morphology Component
+Short Definition Added to Lexeme	User Authenticated	User	Save Short Definition	Short Definition Saved	Definition, Lexeme	Morphology Component	Morphology Component
+Inflections Disambiguated in Lexeme	User Authenticated	User	Save Inflection Disamibugation	Inflection Disambiguation Saved	Lexeme	Morphology Component	Morphology Component
+Homonym Disambiguated	User Authenticated	User	Save Homonym Disamibugation	Homonym Disambiguation Saved	Homonym, Word Request	Morphology Component	Morphology Component
