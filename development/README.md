@@ -61,6 +61,10 @@ It is recommended to follow the rules below in determining where to use `const` 
 `// eslint-disable-line prefer-const` comment string at the end of the line to disable this rule for a selected line. 
 The presence of this rule will be an indication that the props of the object may change but the object itself 
 is never reassigned.
+   
+#### Documentation of the source code
+
+The guidelines for documenting the source code are collected in the [Documentation standards](https://github.com/alpheios-project/documentation/blob/master/development/source-code-documentation.md)
 
 ## GitHub Practices
 

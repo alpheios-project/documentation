@@ -2,7 +2,7 @@
 autonumber "<b>[000]"
 actor User
 participant WordListVueComponent as W
-participant UIController as U
+participant AppController as U
 participant WordListController as C
 participant UserDataQuery as Q
 participant LexicalQuery as L

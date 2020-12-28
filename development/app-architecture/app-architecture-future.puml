@@ -39,7 +39,7 @@ class LemmaTranslations {
     Accessed via a Singleton pattern
 }
 
-class UIController {
+class AppController {
     Coordinates all interactions with a user
     ==
     User communication with page content
@@ -61,14 +61,14 @@ class L10n {
     Accessed via a Singleton pattern
 }
 
-Content *-- UIController
+Content *-- AppController
 Content *-- MessagingService
 
 
-UIController *-- PanelVI
-UIController *-- PopupVI
-UIController *-- TabScript
-UIController *-- ContentOptions
-UIController *-- ResourceOptions
-UIController *-- UIOptions
+AppController *-- PanelVI
+AppController *-- PopupVI
+AppController *-- TabScript
+AppController *-- ContentOptions
+AppController *-- ResourceOptions
+AppController *-- UIOptions
 @enduml

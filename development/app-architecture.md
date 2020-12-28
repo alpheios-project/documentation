@@ -40,10 +40,10 @@ It would be beneficial to make the following changes into an architecture:
 2. Simplify interdependencies between components.
 
 The following changes may help to achieve this goal:
-* Split ContentProcess component between Content and UIController components. Browser specific part of its
+* Split ContentProcess component between Content and AppController components. Browser specific part of its
 functionality (an interaction with a background script or app) could go into a Content component, and 
 page specific functionality (listening of user actions such as clicks) could be inserted into a
-UIController. It is more a UIController responsibility to react to user actions.
+AppController. It is more a AppController responsibility to react to user actions.
 * Eliminate ownership of stateless resources (i.e. morphologycal analyzer and other language resource 
 adapters) with the relationship using a Singleton pattern where a UI controller would call a static
 function on an adapter class and that function will return a reference to a single instance of a controller.

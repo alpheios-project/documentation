@@ -5,6 +5,15 @@ technologies decisions, etc.
 
 This README document summarizes our current development practices.
 
+## Quick Links
+
+[Source code documentation](https://github.com/alpheios-project/documentation/blob/master/development/source-code-documentation.md)
+[Git workflow](https://github.com/alpheios-project/documentation/tree/master/development/git-workflow)
+
+## Development Practices
+
+The summary of best development practices is provided in the [Development Practices Summary](https://github.com/alpheios-project/documentation/tree/master/development)
+
 ## GitHub Workflows
 
 Actively developed Alpheios code repositories should adhere to the following workflows. (Not all legacy repositories have been migrated.)

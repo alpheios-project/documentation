@@ -1,5 +1,5 @@
 @startuml
-object UIController {
+object AppController {
     A container class
     Contains:
     Root Vue component
@@ -58,17 +58,17 @@ node "Event Listeners" {
 }
 
 
-VuexStore *-- UIController
+VuexStore *-- AppController
 
-UIController *-- BusinessMethodA
-UIController *-- BusinessMethodB
-UIController *-- BusinessMethodC
+AppController *-- BusinessMethodA
+AppController *-- BusinessMethodB
+AppController *-- BusinessMethodC
 
-UIController *-- EventListenerA
-UIController *-- EventListenerB
-UIController *-- EventListenerC
+AppController *-- EventListenerA
+AppController *-- EventListenerB
+AppController *-- EventListenerC
 
-UIController *-- VueRootComponent
+AppController *-- VueRootComponent
 VueRootComponent *-- VueComponentA
 VueRootComponent *-- VueComponentB
 

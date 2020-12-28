@@ -1,7 +1,7 @@
 @startuml
 
 participant VueComponent as V
-participant UIController as C
+participant AppController as C
 participant LexicalQuery as L
 participant TreebankClient as T
 participant MorphologyClient as M

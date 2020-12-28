@@ -42,7 +42,7 @@ class MorphAnalyzerAdapter {
 class LemmaTranslations {
 }
 
-class UIController {
+class AppController {
     Coordinates all interactions with a user
 }
 
@@ -63,17 +63,17 @@ Content *-- ContentProcess
 ContentProcess *-- MessagingService
 ContentProcess *-- MorphAnalyzerAdapter
 ContentProcess *-- LemmaTranslations
-ContentProcess *-- UIController
+ContentProcess *-- AppController
 ContentProcess *-- TabScript
 ContentProcess *-- ContentOptions
 ContentProcess *-- ResourceOptions
 ContentProcess *-- UIOptions
 
-UIController *-- PanelVI
-UIController *-- PopupVI
-UIController *-- L10n
-UIController o-- TabScript
-UIController o-- ContentOptions
-UIController o-- ResourceOptions
-UIController o-- UIOptions
+AppController *-- PanelVI
+AppController *-- PopupVI
+AppController *-- L10n
+AppController o-- TabScript
+AppController o-- ContentOptions
+AppController o-- ResourceOptions
+AppController o-- UIOptions
 @enduml
