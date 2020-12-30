@@ -8,6 +8,7 @@ This README document summarizes our current development practices.
 ## Quick Links
 
 [Source code documentation](https://github.com/alpheios-project/documentation/blob/master/development/source-code-documentation.md)
+
 [Git workflow](https://github.com/alpheios-project/documentation/tree/master/development/git-workflow)
 
 ## Development Practices

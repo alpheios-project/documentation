@@ -5,6 +5,8 @@ TypeScript compatible [type checking](https://www.typescriptlang.org/docs/handbo
 if such type checking is supported by an editor or an IDE. For this we should follow the 
 [TypeScript JSDoc guidelines](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html).
 
+A documentation on support of static type checking in selected editors and IDEs is available [here](https://github.com/alpheios-project/documentation/blob/master/development/static-type-checking-in-ides.md).
+
 Documentation should follow the [ESLint JSDoc rules](https://eslint.org/docs/rules/valid-jsdoc).
 
 ## Module
