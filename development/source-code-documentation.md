@@ -69,7 +69,7 @@ class C {
      */
     this.propOne = 0
     
-    // Description, type info, and visibility can be used together
+    // The recommended comment format: description, type info, and visibility together
     /**
      * A prop's description.
      *
