@@ -78,3 +78,11 @@ Please deploy and test the file first in the DEV environment per the Deployment 
 This will deploy the file at config-dev.alpheios.net instead of config.alpheios.net.  You can use a local build of the Alpheios embedded library by changing the value of the`configServiceUrl` setting at https://github.com/alpheios-project/embed-lib/blob/5268f94d2fa5878f20ac7d41b616e96745fc7418/src/embedded.js#L172
 
 
+### Step 4. Add the ability to select the dictionary to Alpheios 
+
+This is the only part that requires a new build of Alpheios to deploy new short definitions. 
+
+In order for a user to select a short definitions dictionary in Alpheios, it needs to be added to https://github.com/alpheios-project/alpheios-core/blob/master/packages/components/src/settings/language-options-defaults.json
+
+Ideally, these values should come from the config api rather than the hard-coded local settings. 
+
